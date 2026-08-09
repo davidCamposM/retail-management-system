@@ -1,0 +1,990 @@
+id,customer_id_original,nombre,edad,genero,region
+1,1000,Alberto Hernán Guevara,66,Masculino,México
+2,1001,Camilo Ricardo Brito Villanueva,24,Femenino,Tamaulipas
+3,1002,Aldo Cabán Gamez,42,Femenino,México
+4,1003,Raquel Amador,40,Masculino,Hidalgo
+5,1004,Linda Garay,56,Masculino,Tlaxcala
+6,1005,Dra. Abril Crespo,69,Femenino,Tamaulipas
+7,1006,Eugenia Cortés Galván,64,Masculino,Querétaro
+8,1007,Bernabé Juan Calderón,52,Femenino,Quintana Roo
+9,1008,Raquel Jaime Armas,42,Femenino,Veracruz de Ignacio de la Llave
+10,1009,Blanca Ochoa,53,Masculino,Colima
+11,1010,Francisca Nájera,58,Masculino,Hidalgo
+12,1011,Alonso Gabino Longoria,54,Femenino,Colima
+13,1012,Bruno Olivares,63,Femenino,Nayarit
+14,1013,Salma Itzel Curiel Nevárez,20,Femenino,Quintana Roo
+15,1014,Gustavo Becerra,67,Masculino,Guanajuato
+16,1015,Elvira Dávila,23,Femenino,Veracruz de Ignacio de la Llave
+17,1016,Estela Sandra Valdés,24,Masculino,México
+18,1017,Ana Luisa Girón Aparicio,35,Masculino,Puebla
+19,1018,Estela Anabel Galarza,58,Masculino,Puebla
+20,1019,Pablo Ortiz,28,Masculino,Veracruz de Ignacio de la Llave
+21,1020,Guillermo Darío Gurule Valentín,40,Femenino,Morelos
+22,1021,Ing. Paola Ozuna,60,Masculino,San Luis Potosí
+23,1022,Darío Saucedo,62,Femenino,Zacatecas
+24,1023,Alvaro César Corral,56,Femenino,Guanajuato
+25,1024,Perla Anabel Olmos,52,Femenino,Sinaloa
+26,1025,Ing. Mónica Heredia,28,Masculino,Aguascalientes
+27,1026,René Gustavo Molina,42,Masculino,Chihuahua
+28,1027,Lic. Eloy Rendón,58,Femenino,Aguascalientes
+29,1028,Dr. Patricio Caraballo,61,Masculino,Oaxaca
+30,1029,Rebeca Farías,67,Femenino,Durango
+31,1030,Citlali Tirado Tamez,32,Femenino,Aguascalientes
+32,1031,Dra. Marisela Almaraz,69,Masculino,Chihuahua
+33,1032,Georgina Grijalva Baeza,43,Masculino,Michoacán de Ocampo
+34,1033,Sra. Antonia Ruelas,22,Femenino,Coahuila de Zaragoza
+35,1034,Camila Cazares,54,Masculino,Yucatán
+36,1035,Clara Jaimes,31,Masculino,Tamaulipas
+37,1036,Reynaldo Fernández,43,Masculino,Oaxaca
+38,1037,Susana Silvia Niño,27,Masculino,Tlaxcala
+39,1038,Margarita Casárez,26,Femenino,Michoacán de Ocampo
+40,1039,Antonio Mireles,65,Masculino,Baja California
+41,1040,Lic. Elisa Villalobos,65,Masculino,México
+42,1041,Arturo Bahena Girón,55,Masculino,Coahuila de Zaragoza
+43,1042,Jesús Batista Serrano,41,Femenino,Michoacán de Ocampo
+44,1043,Lic. Fidel Tirado,26,Masculino,Distrito Federal
+45,1044,Lic. María José Guerra,23,Femenino,Yucatán
+46,1045,Cynthia Ariadna Calderón,25,Femenino,Tamaulipas
+47,1046,Lorena Partida Robles,58,Femenino,Campeche
+48,1047,Ángel Lorenzo Mojica,68,Masculino,Chiapas
+49,1048,Evelio Espinal,56,Femenino,Tlaxcala
+50,1049,Manuel Espartaco Leiva Ríos,42,Masculino,Michoacán de Ocampo
+51,1050,Martín Roberto Calvillo,56,Masculino,Campeche
+52,1052,Adriana Cabán,51,Masculino,Michoacán de Ocampo
+53,1053,Lucas Omar Rosales Gallardo,53,Femenino,Sonora
+54,1054,Emilio Ojeda Acevedo,61,Femenino,Sinaloa
+55,1055,Lic. Hugo Piña,61,Masculino,Zacatecas
+56,1056,Eugenio Ignacio Gamboa Baeza,67,Masculino,Campeche
+57,1057,Ana Luisa Arteaga Viera,25,Masculino,Yucatán
+58,1058,Mónica Cotto,45,Femenino,Campeche
+59,1059,Angélica Escamilla,47,Femenino,Coahuila de Zaragoza
+60,1060,Sra. Tania Gollum,64,Masculino,Sonora
+61,1061,Rufino Gerónimo Véliz,50,Femenino,Baja California Sur
+62,1062,Sra. Linda Vergara,50,Femenino,Puebla
+63,1063,Dr. Jacobo Griego,58,Masculino,Morelos
+64,1064,Caridad Susana Macías,58,Femenino,Veracruz de Ignacio de la Llave
+65,1065,Anel Aguirre Reynoso,27,Masculino,Chiapas
+66,1066,René Fidel Santillán,66,Femenino,Morelos
+67,1067,Jos Armando Guevara Negrón,52,Femenino,Nuevo León
+68,1068,Mario Ricardo Madrid Tafoya,56,Masculino,Aguascalientes
+69,1069,Frida Cano,49,Femenino,Distrito Federal
+70,1071,Sr. Carlos Uribe,25,Masculino,Durango
+71,1072,Ing. Tomás Gaitán,69,Masculino,Querétaro
+72,1073,Guillermo Santiago,33,Femenino,Zacatecas
+73,1074,Sr. Bernabé Piña,33,Femenino,Nayarit
+74,1075,Abel Merino Cedillo,23,Masculino,Morelos
+75,1076,Martín Rodolfo Ponce Valentín,70,Femenino,Aguascalientes
+76,1077,Augusto Eduardo Trejo,66,Femenino,Baja California Sur
+77,1078,Paola Urías Cordero,26,Masculino,Tamaulipas
+78,1079,Alfredo Iván Nava Arenas,53,Femenino,Quintana Roo
+79,1080,Gerónimo Candelaria,34,Masculino,Quintana Roo
+80,1081,Leticia Correa,31,Femenino,Michoacán de Ocampo
+81,1082,Ernesto Luis Alvarado Duarte,63,Masculino,Querétaro
+82,1083,Susana Emilia Jaramillo,43,Masculino,Guanajuato
+83,1084,Juan Alfonso Rodrígez,46,Masculino,México
+84,1085,Maximiliano Montez,25,Femenino,Oaxaca
+85,1086,Francisco Javier Alva,32,Femenino,Hidalgo
+86,1087,Hermelinda Eugenia Barrios,39,Femenino,Nayarit
+87,1088,Sara Saucedo Pabón,55,Femenino,Querétaro
+88,1089,Claudio Ibarra Domínguez,55,Femenino,Morelos
+89,1090,Carlos Ybarra Puente,18,Femenino,Quintana Roo
+90,1091,Luisa Zelaya Segura,63,Femenino,Chihuahua
+91,1092,Olivia Cynthia Hernández,32,Femenino,Baja California Sur
+92,1093,Abigail Miriam Tijerina,20,Masculino,Hidalgo
+93,1094,Lucía Barrios Menéndez,22,Femenino,Puebla
+94,1095,Isaac Patricio Mares,35,Masculino,Tabasco
+95,1096,Leonor Lucero Urrutia,31,Femenino,Distrito Federal
+96,1097,Luis Miguel Ojeda,64,Masculino,Guerrero
+97,1098,Lic. Gabriela Palomino,33,Masculino,Aguascalientes
+98,1099,Ing. Fernando Posada,69,Masculino,Puebla
+99,1100,Magdalena Magdalena Gallardo Segura,30,Femenino,Yucatán
+100,1101,Benito Horacio Serrato Meza,24,Masculino,Colima
+101,1102,Jacinto Garza,40,Masculino,Hidalgo
+102,1103,Alberto Alonso Guevara Roldán,44,Masculino,Coahuila de Zaragoza
+103,1104,Liliana Ruby Velásquez Esquivel,64,Femenino,Sinaloa
+104,1105,Laura Elvira Cordero Adame,61,Femenino,Chiapas
+105,1106,Dulce María Conchita Sisneros,21,Masculino,Veracruz de Ignacio de la Llave
+106,1107,Rodrigo Haro Casas,64,Masculino,Veracruz de Ignacio de la Llave
+107,1108,Miguel Raúl Valdivia Yáñez,69,Femenino,Puebla
+108,1109,Reina Yuridia Santana Polanco,33,Femenino,Tlaxcala
+109,1110,Nicolás Mauricio Huerta Gutiérrez,30,Masculino,Nayarit
+110,1111,Mariana Griego,26,Masculino,Nayarit
+111,1112,Ángela Yeni Lira Gollum,29,Masculino,Nayarit
+112,1113,Guadalupe Toledo Blanco,47,Femenino,Distrito Federal
+113,1114,Gabriel Juan Carlos Corral Gallegos,22,Masculino,Coahuila de Zaragoza
+114,1115,Leticia Hermelinda Torres,69,Femenino,Veracruz de Ignacio de la Llave
+115,1116,Ana María Delia Peres,21,Femenino,Sinaloa
+116,1117,Sra. Olivia Olivares,23,Femenino,Yucatán
+117,1118,José Lugo Orellana,28,Masculino,Tabasco
+118,1119,Natividad Zavala,49,Masculino,México
+119,1120,Dulce María Estela Pulido Ruelas,31,Masculino,Baja California
+120,1121,Ilse Susana Palacios,21,Femenino,Guanajuato
+121,1122,Camila Rosalia Tejeda Amador,42,Femenino,Sonora
+122,1123,Lic. Soledad Amador,42,Masculino,Colima
+123,1124,Carla María del Carmen Echeverría,68,Masculino,Campeche
+124,1125,Lic. Jerónimo Galarza,36,Masculino,Veracruz de Ignacio de la Llave
+125,1126,Ilse Ojeda Ledesma,62,Masculino,Tabasco
+126,1127,Sr. Modesto Almaraz,27,Femenino,Campeche
+127,1128,Elena Barrientos Arevalo,36,Femenino,Baja California
+128,1129,Felipe Almonte,21,Femenino,Durango
+129,1130,Cristian Rojas,65,Masculino,Chihuahua
+130,1131,Srita. María Elena Hidalgo,21,Femenino,San Luis Potosí
+131,1132,Uriel Uriel Carrero Dávila,55,Masculino,Oaxaca
+132,1133,Santiago Alberto Marrero,50,Femenino,Sinaloa
+133,1134,Yolanda Daniela Benítez,21,Femenino,Michoacán de Ocampo
+134,1135,Israel Timoteo Casárez,29,Femenino,Baja California Sur
+135,1136,Nadia Porras Nevárez,56,Femenino,Coahuila de Zaragoza
+136,1137,Sessa Mondragón,61,Femenino,Aguascalientes
+137,1138,Marisela Barbara Prieto,43,Femenino,San Luis Potosí
+138,1139,Wendolin Cecilia Puga del Valle,54,Femenino,Nayarit
+139,1140,Lic. María Teresa Rivero,55,Femenino,Tamaulipas
+140,1141,Dra. Guillermina Guillen,57,Femenino,Colima
+141,1142,Lic. Germán Rivera,44,Masculino,Sinaloa
+142,1143,Alicia Saldaña Meléndez,34,Femenino,Guerrero
+143,1144,Dolores Irma Holguín Molina,60,Masculino,Nayarit
+144,1145,Dra. Noelia Alarcón,33,Masculino,Hidalgo
+145,1146,Gerardo Lucas Sáenz,43,Femenino,Michoacán de Ocampo
+146,1147,Sessa Yeni Salas Ramos,60,Masculino,Baja California
+147,1148,Ignacio Francisco Palacios,47,Masculino,Michoacán de Ocampo
+148,1149,Ing. Nicolás Uribe,66,Femenino,Quintana Roo
+149,1150,Nayeli Hermelinda Mora,18,Masculino,Veracruz de Ignacio de la Llave
+150,1151,Ing. Gilberto Godoy,57,Femenino,Chihuahua
+151,1152,Jacobo Casares,22,Femenino,Guerrero
+152,1153,Flavio Roybal,50,Masculino,Nayarit
+153,1154,Lic. Perla Leyva,26,Masculino,Chiapas
+154,1155,Ignacio Gaytán,22,Femenino,San Luis Potosí
+155,1156,Israel Adalberto Tejeda Castro,41,Masculino,Nayarit
+156,1157,Amador Uribe Loya,28,Masculino,Distrito Federal
+157,1158,Aurora Adriana Vela Linares,52,Masculino,Yucatán
+158,1159,Luz Indira Enríquez Ávalos,57,Femenino,Morelos
+159,1160,Berta Anabel Pacheco Salazar,60,Masculino,Coahuila de Zaragoza
+160,1161,Sra. Catalina Córdova,60,Femenino,Oaxaca
+161,1162,Gerónimo Clemente Valdez,26,Masculino,Tabasco
+162,1163,Lic. Rosa Gastélum,25,Femenino,Sinaloa
+163,1164,Magdalena Frida Villalobos Portillo,65,Femenino,Oaxaca
+164,1165,Lic. Ana María Camacho,35,Masculino,Jalisco
+165,1166,Guillermo Bonilla,56,Femenino,Guanajuato
+166,1167,Eric Urías,63,Masculino,Coahuila de Zaragoza
+167,1168,Abel Lucas Raya Villegas,31,Masculino,Yucatán
+168,1169,Sr. Gabriel Lomeli,50,Masculino,Nuevo León
+169,1170,Anel Úrsula González Jaime,34,Femenino,Hidalgo
+170,1171,Berta Natividad Garza,23,Masculino,Durango
+171,1172,Dr. Arturo Balderas,35,Femenino,Guanajuato
+172,1173,Ing. Mario Castellanos,18,Masculino,Veracruz de Ignacio de la Llave
+173,1174,Lic. Héctor Sanches,67,Femenino,Zacatecas
+174,1175,Angélica Pilar Arenas Preciado,58,Masculino,Puebla
+175,1176,Dra. Aldonza Bustos,28,Masculino,México
+176,1177,Lic. Alejandra Jiménez,53,Masculino,Baja California Sur
+177,1178,Modesto Rafaél Quintanilla Ledesma,53,Femenino,Guerrero
+178,1179,Ing. Salma Salazar,25,Femenino,Colima
+179,1180,Irene Leticia Merino Mayorga,62,Femenino,Chiapas
+180,1181,Jesús Luis Saldivar Lomeli,52,Femenino,Sonora
+181,1182,Alta  Gracia Rentería,41,Femenino,Colima
+182,1183,Esmeralda Mejía Carrillo,45,Femenino,Sonora
+183,1184,Abigail Torres,20,Masculino,Veracruz de Ignacio de la Llave
+184,1185,Ana Cynthia Sisneros,41,Femenino,San Luis Potosí
+185,1186,Ing. Rosario Quintanilla,40,Femenino,Campeche
+186,1187,Gustavo Ulloa,61,Femenino,Distrito Federal
+187,1188,Lic. Omar Casas,60,Femenino,Baja California
+188,1189,Srita. Wendolin Covarrubias,40,Masculino,Oaxaca
+189,1190,Adriana Urías,57,Femenino,Tabasco
+190,1191,Francisco Javier Claudio Riojas,33,Femenino,Chihuahua
+191,1192,Pablo Humberto Saucedo Laboy,69,Femenino,Tabasco
+192,1193,María Eugenia Elvira Reyes Ureña,44,Femenino,Durango
+193,1194,Cynthia Pilar Sauceda,29,Masculino,Distrito Federal
+194,1195,Hernán Luis Manuel Molina,68,Masculino,Nayarit
+195,1197,Horacio Lugo Villagómez,69,Femenino,Zacatecas
+196,1198,Mateo René Roybal Montaño,35,Femenino,Querétaro
+197,1199,Natividad Ocasio,68,Femenino,Veracruz de Ignacio de la Llave
+198,1200,Cynthia Griego Vázquez,42,Femenino,Sinaloa
+199,1201,Luis Armas,48,Femenino,Puebla
+200,1202,Virginia Juana Olvera Coronado,30,Masculino,Zacatecas
+201,1203,Cristian Sandoval Villanueva,40,Masculino,Querétaro
+202,1204,Mario Bruno Sotelo,70,Femenino,Veracruz de Ignacio de la Llave
+203,1205,David Parra Correa,32,Femenino,Coahuila de Zaragoza
+204,1206,Estefanía Ilse Otero Blanco,60,Femenino,Querétaro
+205,1207,Juana Mateo,43,Masculino,Zacatecas
+206,1208,Alta  Gracia Barrientos,35,Femenino,Michoacán de Ocampo
+207,1209,Dr. Bernabé Puente,67,Masculino,Chiapas
+208,1210,Martín Emilio Luna,40,Masculino,Baja California
+209,1211,Jerónimo Badillo Lozada,61,Masculino,Quintana Roo
+210,1212,Lucía Concepción Guevara,19,Femenino,Tabasco
+211,1213,Srita. Claudia del Río,34,Femenino,Colima
+212,1214,Ing. Rosa Guajardo,55,Masculino,Zacatecas
+213,1215,Srita. Eloisa Riojas,20,Femenino,Morelos
+214,1216,Esparta Sonia Aguirre Rivero,56,Masculino,Nuevo León
+215,1217,Celia Benavides,40,Masculino,Tlaxcala
+216,1218,Patricia Luna Pineda,45,Femenino,Morelos
+217,1219,Gabriela Daniela Olivo Rosas,42,Femenino,Chiapas
+218,1220,Juan Vázquez,34,Femenino,Quintana Roo
+219,1221,Dra. Violeta Lucero,63,Masculino,Baja California
+220,1222,Esther Adela Valles,18,Femenino,Campeche
+221,1223,Ing. Fabiola Godínez,41,Masculino,Quintana Roo
+222,1224,Eugenio Henríquez,22,Masculino,Distrito Federal
+223,1225,Zeferino Alfredo Mares,57,Masculino,Tlaxcala
+224,1226,Santiago Nava Ceja,60,Femenino,Colima
+225,1227,Ing. Luis Manuel del Río,64,Masculino,Hidalgo
+226,1228,Reynaldo José Emilio Tamez Sánchez,50,Masculino,Nayarit
+227,1229,Gonzalo Óliver Lucero Mireles,60,Masculino,Chihuahua
+228,1230,Ángela Carmen Gastélum Osorio,38,Masculino,San Luis Potosí
+229,1231,Leonardo Adalberto Jaime,62,Masculino,Chihuahua
+230,1232,Ivonne Tania Iglesias Viera,53,Femenino,Sinaloa
+231,1233,Barbara González Rodríguez,30,Masculino,Baja California
+232,1234,Lic. Helena García,60,Masculino,Coahuila de Zaragoza
+233,1235,Violeta Gabriela Paredes Carrión,61,Femenino,Distrito Federal
+234,1236,Alfonso Maestas Salcedo,57,Masculino,Chihuahua
+235,1237,Genaro René Cervántez,43,Femenino,Sinaloa
+236,1238,Ivonne Susana Toledo Perea,37,Masculino,Durango
+237,1239,Socorro Asunción Saiz,31,Masculino,Tabasco
+238,1240,Sr. José Luis Gamboa,68,Masculino,Tlaxcala
+239,1241,Elsa Isabela Camacho Nazario,47,Masculino,Quintana Roo
+240,1242,Leonardo Leal Espinal,46,Femenino,Chihuahua
+241,1243,Arcelia Soledad Galindo Zambrano,50,Masculino,Baja California
+242,1244,Joaquín Guerrero Castillo,68,Femenino,Jalisco
+243,1245,Rodolfo Fernando Villa,60,Femenino,Jalisco
+244,1246,Jesús Cordero,36,Masculino,Aguascalientes
+245,1247,Dr. Cristobal Toledo,23,Femenino,Morelos
+246,1248,César Alberto Ceja Alejandro,61,Masculino,Quintana Roo
+247,1249,Sergio Mejía,32,Femenino,Baja California
+248,1250,Guillermo Amador Castro Pérez,27,Femenino,Chihuahua
+249,1251,Nicolás Mateo Nájera,20,Femenino,Chiapas
+250,1252,Martha Dulce María Armas Soliz,48,Femenino,Oaxaca
+251,1253,Sara Alicia Ballesteros Roque,47,Masculino,Sonora
+252,1254,Úrsula Barbara Salas,58,Femenino,Tlaxcala
+253,1255,Aurelio Javier Zúñiga,63,Masculino,Durango
+254,1256,Cristian Hernán Vigil,49,Masculino,Puebla
+255,1257,Perla Mónica Lozano,33,Femenino,Veracruz de Ignacio de la Llave
+256,1258,Raquel Posada,59,Femenino,Chiapas
+257,1259,Rodolfo Flavio Posada,66,Femenino,Tlaxcala
+258,1260,Luis Mojica,67,Masculino,Veracruz de Ignacio de la Llave
+259,1261,Liliana Ariadna Marroquín,32,Femenino,Tamaulipas
+260,1262,Sonia Herrera Noriega,69,Masculino,Durango
+261,1263,Andrea Arcelia Briones Cabán,21,Femenino,Tamaulipas
+262,1264,José Manuél Cristobal Valadez,25,Masculino,Campeche
+263,1265,Lic. Noemí Mendoza,26,Masculino,Chihuahua
+264,1266,Irma Sonia Piña,60,Masculino,Campeche
+265,1267,Ing. José Cano,66,Masculino,Jalisco
+266,1268,Óliver Francisco Javier Cardenas Montez,57,Masculino,San Luis Potosí
+267,1269,Homero Salvador Gastélum,53,Masculino,Tamaulipas
+268,1270,Rosalia Valdés,28,Masculino,Baja California
+269,1271,Dra. Alicia Dueñas,46,Masculino,Nayarit
+270,1272,Ing. Jos Aguayo,66,Femenino,Guerrero
+271,1273,Rubén Leonel Barrios Collado,58,Masculino,Baja California
+272,1274,Raúl Flavio Ocampo,67,Masculino,Tabasco
+273,1275,Indira Celia Negrón Marrero,58,Femenino,Puebla
+274,1276,Lic. Antonia Ávila,35,Masculino,Durango
+275,1277,Wilfrido Alvaro Bonilla Jurado,22,Masculino,Tlaxcala
+276,1278,Mariana Rebeca Quintanilla,33,Masculino,Tabasco
+277,1279,Dr. Porfirio Carrera,39,Masculino,Quintana Roo
+278,1280,Beatriz Eva Villaseñor,52,Femenino,Zacatecas
+279,1281,Sonia Manzanares,26,Femenino,Baja California Sur
+280,1282,Leonardo Zamudio,32,Masculino,Campeche
+281,1283,Felix Madera Galarza,62,Femenino,Distrito Federal
+282,1284,Ing. Jerónimo Casares,63,Femenino,Aguascalientes
+283,1285,Lucía Concepción Ceballos Olivares,22,Masculino,México
+284,1286,Noemí Moreno,44,Masculino,Coahuila de Zaragoza
+285,1287,Amalia Luisa Almaraz,52,Masculino,Veracruz de Ignacio de la Llave
+286,1288,Jacobo Samuel Portillo,44,Femenino,Sonora
+287,1289,Florencia Berta Palacios,31,Masculino,Baja California
+288,1290,Claudia Rincón Nájera,42,Femenino,Colima
+289,1291,Barbara Elvira Pulido,66,Masculino,Sonora
+290,1292,Angélica Ortiz,48,Femenino,Oaxaca
+291,1293,Dulce María Merino de la Garza,40,Masculino,Coahuila de Zaragoza
+292,1294,Salma Carrera,66,Masculino,Hidalgo
+293,1295,Irene Cordero Gracia,44,Femenino,Chiapas
+294,1296,Gonzalo Federico Delgadillo Zarate,49,Femenino,Durango
+295,1297,Ernesto Zeferino Salcido,35,Masculino,Veracruz de Ignacio de la Llave
+296,1299,Lic. Marcela Vallejo,49,Femenino,Puebla
+297,1300,Catalina Quiñónez Barreto,42,Masculino,Yucatán
+298,1301,Ruby Gabriela Laureano Villareal,60,Masculino,Campeche
+299,1302,Mayte Benavides Marín,64,Femenino,Veracruz de Ignacio de la Llave
+300,1303,Alta  Gracia Ana Luisa Negrete Llamas,47,Femenino,Coahuila de Zaragoza
+301,1304,Víctor Teodoro Sarabia,57,Femenino,Sinaloa
+302,1305,Pamela Nelly Arguello Rascón,43,Femenino,Hidalgo
+303,1306,Raquel Rolón Sánchez,23,Masculino,Durango
+304,1307,Mauricio Candelaria Montalvo,26,Masculino,Colima
+305,1308,Sessa de León,29,Femenino,Baja California Sur
+306,1309,Mario Quiñones,34,Masculino,Guanajuato
+307,1310,Jaqueline Leyva Ontiveros,38,Femenino,Tabasco
+308,1311,Teresa Zamora Ávila,47,Masculino,Querétaro
+309,1312,Jesús Bernardo Valdez,39,Masculino,Sinaloa
+310,1313,Ing. Tomás Cornejo,35,Masculino,Querétaro
+311,1314,Serafín David Montez,34,Femenino,Oaxaca
+312,1315,Caridad Perla Bravo,48,Femenino,Oaxaca
+313,1316,Josefina Méndez,65,Femenino,Distrito Federal
+314,1317,Arcelia Piña,40,Femenino,San Luis Potosí
+315,1318,José Eduardo Mares Dueñas,59,Femenino,Jalisco
+316,1319,Mariana Espinosa Gastélum,67,Femenino,Distrito Federal
+317,1320,Augusto Ignacio Campos Sarabia,66,Femenino,Baja California Sur
+318,1321,Rosa Ceja Zambrano,33,Femenino,Sinaloa
+319,1322,Emiliano Espartaco de Jesús Quezada,19,Femenino,Baja California Sur
+320,1323,Itzel Teresa Granados,33,Femenino,Tlaxcala
+321,1324,Dra. Marcela González,48,Femenino,Michoacán de Ocampo
+322,1325,Lic. Evelio Nazario,54,Femenino,Tlaxcala
+323,1326,Eva Juana Sandoval Suárez,47,Masculino,Tabasco
+324,1327,Felipe Tomás Chavarría Henríquez,67,Masculino,Campeche
+325,1328,Jaqueline Nelly Candelaria Sevilla,28,Femenino,Chihuahua
+326,1329,Sr. Emiliano Laboy,67,Femenino,Tlaxcala
+327,1330,Carolina Quesada,37,Femenino,Colima
+328,1331,Mauricio Montes,55,Femenino,Baja California
+329,1332,Ana Karla Sandoval,37,Masculino,San Luis Potosí
+330,1333,Juan Carlos Bonilla,43,Femenino,San Luis Potosí
+331,1334,Aldo Matos,22,Femenino,Chiapas
+332,1335,Carolina Chapa Arellano,24,Masculino,Nuevo León
+333,1336,Victoria Carlota Rodarte Rangel,61,Femenino,Aguascalientes
+334,1337,Adán Gonzalo Galván,68,Femenino,Durango
+335,1338,Rebeca Suárez,40,Masculino,Tamaulipas
+336,1339,Hugo Genaro Madera,60,Masculino,Chihuahua
+337,1340,Gerardo Perea Reyna,22,Masculino,Coahuila de Zaragoza
+338,1341,Pablo Teodoro Tello,18,Masculino,Baja California
+339,1342,Olivia Guardado,70,Masculino,Durango
+340,1343,Lic. Abel Morales,24,Masculino,Michoacán de Ocampo
+341,1344,Ing. Cristina Briones,41,Masculino,San Luis Potosí
+342,1345,Ramón Ricardo Sarabia,63,Femenino,Baja California
+343,1346,María Eugenia Amanda Ontiveros,45,Femenino,San Luis Potosí
+344,1347,Sr. José Carlos Barreto,64,Masculino,Quintana Roo
+345,1348,Zeferino Cano,57,Masculino,Querétaro
+346,1349,Alonso José Treviño Mireles,47,Masculino,Guerrero
+347,1350,Victoria María Luisa Echeverría Cervántez,70,Masculino,Coahuila de Zaragoza
+348,1351,Alta  Gracia Francisca Ferrer Armas,38,Femenino,Hidalgo
+349,1352,Jacobo Marín Serrato,23,Masculino,Sonora
+350,1353,María José Hernandes,46,Femenino,Baja California Sur
+351,1354,Hugo Munguía,66,Masculino,Campeche
+352,1355,Estela Castellanos Nazario,54,Masculino,Tamaulipas
+353,1356,Luz Judith Mojica,39,Femenino,Guerrero
+354,1357,Verónica Marisol Nazario Solano,49,Masculino,Nayarit
+355,1358,Manuel Aurelio Posada,29,Masculino,Guerrero
+356,1359,Francisca Mayorga,31,Masculino,Chiapas
+357,1360,Jerónimo Ignacio Malave,69,Masculino,Tlaxcala
+358,1361,Ing. Clara Quiroz,39,Masculino,Quintana Roo
+359,1362,Amalia Irma Puga Laureano,56,Masculino,Campeche
+360,1363,Lorenzo José Emilio Serna,53,Femenino,Guanajuato
+361,1364,David Zúñiga Quezada,51,Femenino,Baja California Sur
+362,1365,Armando Genaro Navarro Nájera,23,Femenino,Sinaloa
+363,1366,Sra. Raquel Corrales,64,Masculino,Tlaxcala
+364,1367,Jaqueline Quiroz Bermúdez,49,Femenino,Distrito Federal
+365,1368,Itzel Otero,62,Masculino,Puebla
+366,1369,Dr. Claudio Alvarez,59,Masculino,Guerrero
+367,1370,Minerva Julia Valenzuela Carvajal,46,Femenino,Morelos
+368,1371,Lic. Fidel Lira,23,Masculino,Zacatecas
+369,1372,Cornelio Cervántez,32,Masculino,Coahuila de Zaragoza
+370,1373,Concepción Yeni Rael Brito,62,Femenino,Puebla
+371,1374,Wendolin Barragán Urbina,37,Masculino,Nuevo León
+372,1375,Dr. Eric Nájera,48,Masculino,México
+373,1376,Felipe Darío Granado,45,Masculino,Zacatecas
+374,1377,José Eduardo Urrutia Vega,40,Masculino,San Luis Potosí
+375,1378,Nelly Caridad Briseño Barraza,35,Masculino,Oaxaca
+376,1379,Yolanda Yuridia Roque,34,Femenino,Tabasco
+377,1380,Olivia Anel Castillo,25,Femenino,Puebla
+378,1381,Mauricio Miguel Ángel Sierra,38,Femenino,Quintana Roo
+379,1382,Rodolfo Sergio Echeverría Ceballos,65,Femenino,Tamaulipas
+380,1383,Ana Luisa Castellanos,30,Femenino,Durango
+381,1384,Dr. Emiliano Medrano,65,Masculino,México
+382,1385,Minerva Limón Berríos,35,Masculino,Morelos
+383,1386,Rodolfo Laureano,24,Femenino,Distrito Federal
+384,1387,Sr. Pascual de la Garza,36,Femenino,Durango
+385,1388,Zacarías Tomás Miranda Valle,41,Femenino,Baja California Sur
+386,1389,Aurelio Armenta Velázquez,37,Femenino,Morelos
+387,1390,Salvador Peña,63,Femenino,Baja California
+388,1391,Rosario Natividad Longoria Madrid,35,Femenino,Yucatán
+389,1392,Lorenzo Luevano,21,Masculino,Veracruz de Ignacio de la Llave
+390,1393,Ángel Eloy Quiñónez,62,Femenino,Tabasco
+391,1394,María del Carmen Delia Molina Zepeda,58,Masculino,Durango
+392,1395,Yolanda Matos Montaño,24,Femenino,Sonora
+393,1396,José Luis Porfirio Valenzuela Caraballo,54,Masculino,Puebla
+394,1397,Miguel Ángel Casillas,48,Masculino,Nayarit
+395,1398,Emilia Carmen Calderón Arteaga,46,Masculino,Nuevo León
+396,1399,Rocío Linda Guzmán,29,Femenino,Guanajuato
+397,1400,Olivia Marroquín Espinal,34,Masculino,Guanajuato
+398,1401,Micaela María Elena Samaniego Manzanares,25,Femenino,Zacatecas
+399,1402,Bernabé Orozco Santiago,43,Masculino,Veracruz de Ignacio de la Llave
+400,1403,Flavio Vergara,22,Femenino,Quintana Roo
+401,1404,Alvaro Lerma Saldaña,27,Femenino,Yucatán
+402,1405,Sr. Carlos Prado,69,Masculino,Distrito Federal
+403,1406,Ing. Lorenzo Navarrete,23,Femenino,Baja California Sur
+404,1407,Ana Ofelia Valenzuela,25,Masculino,Hidalgo
+405,1408,Nelly Lomeli Benavides,56,Femenino,Sinaloa
+406,1409,Margarita Urbina,67,Masculino,Nayarit
+407,1410,Lic. Bianca Cazares,46,Masculino,Chiapas
+408,1411,Jaqueline Ilse Valdez,37,Masculino,San Luis Potosí
+409,1412,Federico Tomás Saucedo Padilla,37,Femenino,Baja California Sur
+410,1413,Alfonso Chapa Merino,57,Femenino,Yucatán
+411,1414,María Córdova,66,Femenino,Distrito Federal
+412,1415,Reina Matos Curiel,58,Femenino,Sonora
+413,1416,Dra. Paulina Miramontes,34,Femenino,Zacatecas
+414,1417,Dra. María José Alfaro,28,Femenino,San Luis Potosí
+415,1418,Tania Carmona Peña,29,Femenino,Oaxaca
+416,1419,Teodoro Rojo Jaimes,28,Femenino,México
+417,1420,Serafín Rosado de la Rosa,44,Masculino,Sinaloa
+418,1421,Germán Alejandro Vega Carmona,62,Masculino,Hidalgo
+419,1422,Mario Martínez Peralta,36,Femenino,Durango
+420,1423,Vanesa Delia Partida,32,Masculino,Yucatán
+421,1424,Darío Solano Franco,63,Masculino,Puebla
+422,1425,Mitzy Josefina Martínez Delgadillo,62,Masculino,Veracruz de Ignacio de la Llave
+423,1426,Indira Treviño,22,Femenino,Quintana Roo
+424,1427,Lic. Evelio Gurule,34,Femenino,Nayarit
+425,1428,Frida Garza,45,Femenino,Oaxaca
+426,1429,Dr. Óscar Mateo,52,Femenino,Yucatán
+427,1430,Noemí Lara Loera,59,Femenino,Chihuahua
+428,1431,Lic. Juana Ortega,35,Femenino,Quintana Roo
+429,1433,Humberto Alfredo Loera Berríos,22,Femenino,Quintana Roo
+430,1434,Socorro Esparta Roque Gallegos,28,Masculino,Hidalgo
+431,1435,Estela Valenzuela,56,Masculino,Nayarit
+432,1436,Carlos Víctor Villa Grijalva,46,Femenino,Michoacán de Ocampo
+433,1437,Raúl Gastélum Gonzales,47,Masculino,Campeche
+434,1438,Luis Jesús Rodríquez,62,Masculino,Chiapas
+435,1439,Abelardo Roberto Cotto Palomo,35,Masculino,Yucatán
+436,1440,Silvia Débora Loera Mayorga,46,Femenino,Nuevo León
+437,1441,Benjamín Vela Gómez,56,Femenino,Baja California Sur
+438,1442,Luis Manuel Ernesto Arce Osorio,45,Masculino,Zacatecas
+439,1443,Humberto Alfonso Aguirre Lugo,56,Masculino,Chiapas
+440,1444,Eva Rentería Tórrez,19,Femenino,Zacatecas
+441,1445,Patricio Miguel Ángel Laboy Espinoza,32,Femenino,Chihuahua
+442,1446,Citlali Reynoso Hinojosa,66,Masculino,Guerrero
+443,1447,Jonás Lucero Vanegas,54,Femenino,Hidalgo
+444,1448,Vicente Lorenzo Ponce Serrato,66,Femenino,Puebla
+445,1449,Leonel Bernardo Escalante,48,Masculino,Distrito Federal
+446,1450,Guillermina Emilia Aguayo Ibarra,35,Femenino,Sinaloa
+447,1451,Mateo Jaramillo,55,Masculino,Querétaro
+448,1452,Sr. Gregorio Murillo,58,Masculino,Michoacán de Ocampo
+449,1453,Clemente Rivero Maldonado,23,Masculino,Guanajuato
+450,1454,Úrsula Martha Márquez,40,Masculino,Chihuahua
+451,1455,Ing. Víctor García,39,Masculino,México
+452,1456,Octavio Elias Rentería Zelaya,60,Femenino,San Luis Potosí
+453,1457,Violeta Nayeli Rodríguez,28,Masculino,Jalisco
+454,1458,Teodoro Bonilla,44,Masculino,Tlaxcala
+455,1459,Virginia Nájera,36,Masculino,Coahuila de Zaragoza
+456,1460,Sra. Ana María Trujillo,70,Femenino,Hidalgo
+457,1461,Lic. Catalina de Anda,47,Femenino,Puebla
+458,1462,Magdalena Carrión,38,Masculino,Jalisco
+459,1463,Ing. Arcelia Segovia,38,Femenino,Tlaxcala
+460,1464,Mauro Centeno Serna,67,Masculino,Tabasco
+461,1465,Norma Ana Luisa Valdivia Ríos,50,Femenino,Oaxaca
+462,1466,Leonardo Hernández Acosta,60,Masculino,Jalisco
+463,1467,Sra. Amanda Piña,44,Femenino,Quintana Roo
+464,1468,Reynaldo Ángel Barrientos,30,Masculino,Yucatán
+465,1469,Hugo Paredes Dueñas,57,Masculino,Distrito Federal
+466,1470,Jaqueline Juana Rangel,58,Masculino,Sinaloa
+467,1471,Angélica Trinidad Tirado,66,Femenino,Distrito Federal
+468,1472,Bianca Domínguez Terrazas,31,Masculino,Sonora
+469,1473,Camila Garica,53,Femenino,Aguascalientes
+470,1474,Isaac Rivas Tovar,36,Masculino,Tamaulipas
+471,1475,Juana Godínez,62,Masculino,Michoacán de Ocampo
+472,1476,Inés Cecilia Leal Esparza,25,Femenino,Chihuahua
+473,1477,Luis Miguel Alemán Guajardo,58,Femenino,Jalisco
+474,1478,Bruno Teodoro Aponte,63,Femenino,Tlaxcala
+475,1479,Sra. Elvira Armendáriz,37,Femenino,Sonora
+476,1480,Eloisa Natalia Gamboa Badillo,53,Masculino,Distrito Federal
+477,1481,Florencia González,23,Femenino,Puebla
+478,1482,Lic. Tania Mayorga,25,Masculino,Michoacán de Ocampo
+479,1483,Dr. Ramiro García,25,Femenino,Tabasco
+480,1484,Ing. Ángel Valdés,49,Masculino,Guerrero
+481,1485,Noelia Marisol Arreola,50,Masculino,Quintana Roo
+482,1486,Mitzy Guadalupe Peña,44,Masculino,Tabasco
+483,1487,Isaac José María Enríquez Terrazas,48,Femenino,Yucatán
+484,1488,Francisco Javier Macías,47,Femenino,Durango
+485,1489,Ana Luisa Noemí Paz Peña,42,Femenino,Distrito Federal
+486,1490,Elvira Esparta Figueroa,56,Femenino,Querétaro
+487,1491,Mauricio José Luis Caballero,22,Masculino,Hidalgo
+488,1492,Gustavo Ocasio Zedillo,67,Masculino,Baja California Sur
+489,1493,Eugenio Sergio Valdivia,39,Masculino,Jalisco
+490,1494,Diana Hilda Madrigal Alejandro,70,Femenino,Jalisco
+491,1495,Clemente Roque,36,Masculino,Michoacán de Ocampo
+492,1496,Srita. Karla Grijalva,55,Masculino,Puebla
+493,1497,Lic. Miguel Ángel Tejeda,27,Masculino,Quintana Roo
+494,1498,Ing. José Eduardo Serna,52,Masculino,Zacatecas
+495,1499,Asunción Yuridia Rodarte Maya,40,Masculino,Jalisco
+496,1500,Graciela Pedraza Armenta,53,Masculino,México
+497,1501,Adán Gregorio Uribe Viera,47,Masculino,Tabasco
+498,1502,Dr. Federico Mendoza,30,Femenino,México
+499,1503,Ofelia Elvira Sanabria,54,Masculino,Querétaro
+500,1504,Lic. Óscar Rincón,32,Masculino,Guanajuato
+501,1505,Claudia Cintrón Treviño,20,Masculino,Zacatecas
+502,1506,Reynaldo Ángel Soria Aponte,65,Masculino,Coahuila de Zaragoza
+503,1507,Abelardo Paz Chapa,63,Masculino,México
+504,1508,Eduardo Abraham Gamez,42,Femenino,Veracruz de Ignacio de la Llave
+505,1509,Ana María Rosas Saavedra,49,Femenino,Baja California
+506,1510,Renato Ureña Patiño,26,Masculino,Aguascalientes
+507,1511,Raúl Laureano Tello,24,Masculino,Nuevo León
+508,1512,Pascual Posada Duarte,24,Masculino,Chiapas
+509,1513,Ramón Eduardo Guajardo,18,Femenino,Hidalgo
+510,1514,Lic. Esmeralda Moreno,44,Femenino,Nayarit
+511,1515,Angélica Jaqueline Palomino,22,Masculino,Veracruz de Ignacio de la Llave
+512,1516,Srita. Victoria Gastélum,68,Masculino,Oaxaca
+513,1517,Alejandro Bernabé Palomino,39,Masculino,Sinaloa
+514,1518,Nelly María José Badillo,59,Femenino,Aguascalientes
+515,1519,Benito Pablo Puente Meraz,39,Masculino,Chiapas
+516,1520,Amalia Godínez,38,Masculino,Jalisco
+517,1521,Ing. Estela Arredondo,52,Femenino,Coahuila de Zaragoza
+518,1522,Sr. Ernesto Mascareñas,57,Femenino,Baja California
+519,1523,Sergio Colón,33,Masculino,Sonora
+520,1524,Isaac Emiliano Valle,32,Femenino,Michoacán de Ocampo
+521,1525,Ing. Teresa Toledo,45,Femenino,Querétaro
+522,1526,Carlota Vanesa Berríos,66,Femenino,Quintana Roo
+523,1527,Bruno Quesada Gómez,46,Femenino,Coahuila de Zaragoza
+524,1528,Raquel Yáñez Osorio,62,Masculino,Puebla
+525,1529,Héctor Raya Salas,19,Femenino,México
+526,1530,Nelly Núñez Preciado,38,Femenino,Guerrero
+527,1531,Ing. Antonia Lucero,36,Masculino,Michoacán de Ocampo
+528,1532,Benito Gustavo Corrales,41,Masculino,Sinaloa
+529,1533,Julio Jaime Muro Carbajal,27,Femenino,Colima
+530,1534,Iván Rael Murillo,51,Masculino,Nayarit
+531,1535,Cristobal Benjamín Escobar,54,Femenino,Tamaulipas
+532,1536,Noelia Noelia Sepúlveda Pantoja,28,Femenino,Chiapas
+533,1537,Benjamín Moreno Urrutia,23,Masculino,Colima
+534,1538,Lic. Helena Olmos,57,Femenino,Aguascalientes
+535,1539,Lic. Julio Bravo,49,Femenino,Michoacán de Ocampo
+536,1540,Lic. Claudia Olivares,32,Masculino,Guanajuato
+537,1541,Gustavo Israel Jasso Salcedo,58,Masculino,Durango
+538,1542,Emilio Mariano Leal,47,Masculino,Tabasco
+539,1543,Lic. Augusto Muro,60,Femenino,Morelos
+540,1544,Zeferino Saldivar,69,Masculino,Hidalgo
+541,1545,Barbara Carla Maestas Aguayo,36,Femenino,Sonora
+542,1546,Rosa Olivares Mendoza,22,Masculino,Tlaxcala
+543,1547,Lucía Villegas Chacón,40,Masculino,Oaxaca
+544,1548,Raquel Fernández Roque,58,Masculino,Puebla
+545,1549,Leonardo Jaime Lovato Salas,62,Masculino,Michoacán de Ocampo
+546,1550,Josefina León Orozco,47,Masculino,San Luis Potosí
+547,1551,Rubén Felipe Villarreal,30,Masculino,Guerrero
+548,1552,Aldonza Riojas,48,Femenino,Jalisco
+549,1553,Florencia Verónica Barrientos Paredes,33,Masculino,Zacatecas
+550,1554,Israel Gerardo Hernádez Corrales,54,Masculino,Tamaulipas
+551,1555,Anel Marcela Zamora,54,Masculino,Yucatán
+552,1556,Ing. Nadia Santillán,62,Masculino,Tabasco
+553,1557,Alta  Gracia Murillo,19,Masculino,Colima
+554,1558,Gerónimo José de la Crúz,35,Femenino,Baja California Sur
+555,1559,Ing. Hermelinda Posada,54,Femenino,Chiapas
+556,1560,Bruno Holguín Garibay,56,Masculino,México
+557,1561,Jaqueline Karina Rivas Villalobos,36,Femenino,Durango
+558,1562,Aldonza Rosas Cantú,56,Masculino,Nuevo León
+559,1563,Antonia Berta Collado,32,Femenino,Quintana Roo
+560,1564,Ing. Mauro Fonseca,57,Masculino,Yucatán
+561,1565,María José Calderón Quezada,61,Femenino,Tlaxcala
+562,1566,Andrea Macías Armendáriz,58,Femenino,Chihuahua
+563,1567,Jorge Cardona de Anda,58,Femenino,Michoacán de Ocampo
+564,1568,Concepción Urías,37,Masculino,Guanajuato
+565,1569,Noemí Polanco Ríos,20,Masculino,México
+566,1570,Ruby Cristina Escamilla,64,Femenino,Tamaulipas
+567,1571,Alicia Rocío Fajardo,23,Masculino,Tlaxcala
+568,1572,Ing. Julia Acuña,38,Masculino,Jalisco
+569,1573,Homero Barajas,29,Femenino,Chiapas
+570,1574,Cristina Navarrete,26,Masculino,Puebla
+571,1575,Maximiliano Carrera,51,Masculino,Morelos
+572,1576,Mónica Sandra Marroquín Zambrano,28,Masculino,Sinaloa
+573,1577,Ing. Patricia Carrera,70,Masculino,Quintana Roo
+574,1578,María Cristina de León Luevano,69,Masculino,Colima
+575,1579,Jacobo Clemente Griego Magaña,65,Masculino,Chihuahua
+576,1580,José Manuél David Segura Oquendo,69,Femenino,Tabasco
+577,1581,Srita. Olivia Olivera,47,Femenino,Tamaulipas
+578,1582,Omar René Delgadillo Vaca,27,Femenino,Guanajuato
+579,1583,Fabiola Carlota Escobar Mascareñas,61,Masculino,Tlaxcala
+580,1584,Sra. Isabel Aguirre,69,Masculino,Zacatecas
+581,1585,Evelio Juan Carlos Valenzuela Santiago,23,Masculino,Zacatecas
+582,1586,Úrsula Marisela Pelayo,18,Masculino,Tlaxcala
+583,1587,Clara Antonia Vallejo Angulo,52,Femenino,México
+584,1588,Sr. Hernán Garza,47,Masculino,Nuevo León
+585,1589,Maximiliano Rubén Saldivar Ulloa,61,Masculino,Chihuahua
+586,1590,Sra. Estela Tórrez,55,Masculino,San Luis Potosí
+587,1591,Amalia Quintana,70,Masculino,Jalisco
+588,1592,Aurora Socorro Gutiérrez,24,Femenino,Oaxaca
+589,1593,Mauricio Irizarry Montero,48,Femenino,Colima
+590,1594,Bianca Elsa Fuentes Villalobos,57,Masculino,Quintana Roo
+591,1595,Ing. Clara Chávez,57,Femenino,Jalisco
+592,1596,Ángel Vargas,59,Femenino,Quintana Roo
+593,1597,Eugenia Zambrano,58,Masculino,Guanajuato
+594,1598,Virginia Loya Longoria,62,Masculino,Nayarit
+595,1600,Teresa Cadena,59,Masculino,Distrito Federal
+596,1601,Ana María Esther Castro,25,Femenino,Distrito Federal
+597,1602,Diego Medina,20,Femenino,Michoacán de Ocampo
+598,1603,Marisela Carmen Vélez,37,Masculino,Nayarit
+599,1604,Josefina Margarita Benítez,25,Femenino,Colima
+600,1605,Micaela Eugenia Negrete,33,Femenino,Veracruz de Ignacio de la Llave
+601,1606,Helena Pamela Acevedo Cabán,42,Masculino,Veracruz de Ignacio de la Llave
+602,1607,Anabel Téllez Otero,41,Masculino,Jalisco
+603,1608,Dolores Marisol Jasso,55,Femenino,Puebla
+604,1609,Ing. Roberto Vélez,44,Femenino,Distrito Federal
+605,1610,Ing. Indira Arriaga,49,Masculino,Baja California Sur
+606,1611,Zeferino Maximiliano Alemán,35,Femenino,Chihuahua
+607,1612,Mario Mauro Abrego Porras,62,Masculino,Hidalgo
+608,1613,Israel Eloy Lara Cabán,31,Masculino,San Luis Potosí
+609,1614,Sr. José Manuél de Jesús,46,Femenino,Campeche
+610,1615,Rosario Georgina González,41,Femenino,Tamaulipas
+611,1616,Bernardo Abel Gallardo,61,Masculino,Yucatán
+612,1617,Cristobal Silvano Gastélum,52,Masculino,Tlaxcala
+613,1618,Abraham Montalvo Casárez,21,Masculino,Tamaulipas
+614,1619,Octavio Arturo Girón Olivera,35,Femenino,Colima
+615,1620,Camilo Jacobo Nazario,25,Masculino,Oaxaca
+616,1621,Juan Daniel Collazo Barrientos,23,Femenino,Aguascalientes
+617,1622,Srita. Luz Montoya,59,Femenino,Jalisco
+618,1623,Luis Víctor Quintero Gamboa,21,Masculino,Colima
+619,1624,Darío Cornelio Villalpando,33,Femenino,Sinaloa
+620,1625,Lourdes Mascareñas Cintrón,68,Femenino,Michoacán de Ocampo
+621,1626,Sr. Gerónimo Uribe,22,Femenino,Nuevo León
+622,1627,Israel Flórez Sisneros,55,Femenino,Hidalgo
+623,1628,Francisca Sessa Ayala,70,Femenino,Michoacán de Ocampo
+624,1629,Judith Beatriz Guajardo Sanabria,39,Femenino,Coahuila de Zaragoza
+625,1630,Adriana Muro,68,Femenino,Puebla
+626,1631,Julio Rufino Peres Navarrete,35,Femenino,Guerrero
+627,1632,Anel Aida Villagómez Barreto,26,Masculino,Aguascalientes
+628,1633,Dr. Alfredo Balderas,69,Femenino,Sonora
+629,1634,Fabiola Sánchez,25,Femenino,Tabasco
+630,1635,Violeta Laura Borrego,26,Femenino,Durango
+631,1636,Sr. Jacinto Berríos,40,Femenino,Jalisco
+632,1637,René Jerónimo Ornelas Villa,55,Masculino,Coahuila de Zaragoza
+633,1638,Lic. Gerardo Baeza,19,Femenino,Michoacán de Ocampo
+634,1639,Mariano Claudio Rendón,34,Femenino,Campeche
+635,1640,Dr. Clemente Alcala,26,Masculino,Distrito Federal
+636,1641,Emiliano Salgado Montenegro,51,Femenino,Morelos
+637,1642,José Manuél Cristian Jiménez Carvajal,65,Femenino,Baja California
+638,1643,Lourdes Jurado Soria,48,Masculino,Coahuila de Zaragoza
+639,1644,Sr. Pablo Reséndez,67,Masculino,San Luis Potosí
+640,1645,Pablo Valverde de la Crúz,50,Femenino,San Luis Potosí
+641,1646,Gonzalo Camilo Vela Carrillo,46,Femenino,México
+642,1647,Abigail Armendáriz,57,Femenino,Aguascalientes
+643,1648,Alonso Rodríquez,64,Masculino,San Luis Potosí
+644,1649,Catalina Conchita Aranda,47,Femenino,Tabasco
+645,1650,Javier Guzmán,21,Masculino,Tabasco
+646,1651,Estela Bernal Vázquez,43,Masculino,San Luis Potosí
+647,1652,Pascual Amador Duarte,61,Femenino,México
+648,1653,Amanda Pacheco,49,Masculino,Coahuila de Zaragoza
+649,1654,Eva Gloria Menchaca Briseño,22,Femenino,Veracruz de Ignacio de la Llave
+650,1655,José Luis Fernández Lovato,38,Femenino,Oaxaca
+651,1656,Srita. María del Carmen Negrete,22,Femenino,Zacatecas
+652,1657,Ricardo Guillen,35,Masculino,Durango
+653,1658,Lucas Alva Gonzales,42,Masculino,Quintana Roo
+654,1659,Joaquín Abreu Ocampo,47,Masculino,Oaxaca
+655,1660,Felix Raúl Granados,24,Femenino,Tabasco
+656,1661,Ana María Carmen Lemus Cabán,59,Femenino,Baja California Sur
+657,1662,Ramiro Paz,45,Masculino,San Luis Potosí
+658,1663,Antonia Pamela Cadena Santiago,32,Masculino,Distrito Federal
+659,1664,Ángela Paulina Vanegas,39,Masculino,Campeche
+660,1665,Soledad Caridad Granado,43,Masculino,Nuevo León
+661,1666,Ing. Julio César Mena,64,Femenino,Puebla
+662,1667,Estela Eloisa Benavídez Fierro,38,Masculino,Distrito Federal
+663,1668,Sra. Cecilia Caraballo,38,Masculino,Guanajuato
+664,1669,María Elena Graciela Palomo Casárez,41,Femenino,Quintana Roo
+665,1671,Mauricio Manzanares,61,Masculino,Veracruz de Ignacio de la Llave
+666,1672,Sr. Bernabé Cotto,22,Femenino,Oaxaca
+667,1673,Sra. Dulce Menchaca,23,Femenino,Durango
+668,1674,Gerónimo José Carlos Ortiz,45,Femenino,Campeche
+669,1675,Ing. Eric Angulo,65,Masculino,Sonora
+670,1676,Noelia Nayeli Haro Cabrera,69,Femenino,Veracruz de Ignacio de la Llave
+671,1677,Darío Cornelio Alcala,53,Femenino,Campeche
+672,1678,Cristobal Fajardo,55,Masculino,Sonora
+673,1679,Úrsula Bravo Verduzco,60,Femenino,Morelos
+674,1680,Agustín Antonio Fajardo,44,Masculino,Tlaxcala
+675,1681,Bernabé Jesús Casillas Arias,60,Masculino,Veracruz de Ignacio de la Llave
+676,1682,Enrique Vela Prieto,64,Femenino,Sonora
+677,1683,Alicia Juana Polanco de León,36,Masculino,Quintana Roo
+678,1684,Esteban Laureano,40,Femenino,Nayarit
+679,1685,Catalina Alma Guillen Lucero,54,Femenino,Zacatecas
+680,1686,Nayeli María Luisa Ballesteros,27,Masculino,Colima
+681,1687,Lic. Darío Perea,32,Femenino,Hidalgo
+682,1688,Emilia Tórrez,40,Masculino,Baja California
+683,1689,Yeni Isabel Rosado,25,Masculino,Zacatecas
+684,1690,Norma Sandoval Medina,54,Femenino,Sinaloa
+685,1691,Dr. Alberto Matos,69,Masculino,México
+686,1692,Homero Baeza Rodríquez,53,Femenino,Quintana Roo
+687,1694,Srita. Celia Camarillo,56,Masculino,Michoacán de Ocampo
+688,1695,Gustavo Tejeda,19,Femenino,Campeche
+689,1696,Samuel Oquendo,35,Masculino,Quintana Roo
+690,1697,Ernesto Genaro Villarreal Matías,39,Masculino,Quintana Roo
+691,1698,Sra. Virginia Mora,18,Femenino,Durango
+692,1699,Srita. Marisol Torres,27,Masculino,Oaxaca
+693,1700,Óscar Alfonso Bustamante Badillo,22,Femenino,México
+694,1701,Srita. Alejandra Soto,65,Femenino,Yucatán
+695,1702,Jesús Ferrer Cedillo,23,Femenino,Querétaro
+696,1703,Javier Ángel Alonzo Cordero,42,Masculino,Durango
+697,1704,Ramón José Emilio Beltrán,47,Masculino,San Luis Potosí
+698,1705,Patricia Asunción Miramontes,28,Masculino,Oaxaca
+699,1706,Carla Cotto Quesada,37,Masculino,Zacatecas
+700,1707,Concepción Valenzuela Munguía,67,Femenino,México
+701,1708,Srita. Josefina Maldonado,21,Femenino,Nuevo León
+702,1709,Ernesto Abel Vega Ornelas,28,Femenino,Baja California Sur
+703,1710,Tomás Jaime García Valles,61,Femenino,Chiapas
+704,1711,Carmen Hermelinda Bernal Granados,35,Masculino,Quintana Roo
+705,1712,Clara Bueno Meza,60,Masculino,Tlaxcala
+706,1713,Guillermo Fuentes Haro,49,Masculino,Coahuila de Zaragoza
+707,1714,Esparta Cardenas Abreu,44,Masculino,Campeche
+708,1715,Luz Linda de la Crúz,31,Femenino,Tabasco
+709,1716,Josefina Irene Treviño Núñez,40,Masculino,Chiapas
+710,1717,Olivia Silvia Garza Curiel,25,Masculino,Tlaxcala
+711,1718,Alejandro Ignacio Almonte,61,Masculino,Puebla
+712,1719,Sr. Arturo Monroy,51,Masculino,Guanajuato
+713,1720,Citlali Ángela Trujillo,20,Femenino,Colima
+714,1721,Perla Rosas Angulo,43,Femenino,Tamaulipas
+715,1722,Uriel Mariano Cortez Avilés,18,Femenino,Chiapas
+716,1723,Delia Espinal Parra,37,Femenino,Morelos
+717,1724,Ing. Genaro Caldera,67,Femenino,Campeche
+718,1725,Olga Nayeli Salas,66,Masculino,Durango
+719,1726,José Eduardo Acosta Ponce,36,Masculino,Colima
+720,1727,Lic. Felipe Calderón,25,Femenino,Baja California
+721,1728,Enrique Lovato,49,Masculino,Colima
+722,1729,Berta Georgina Otero Rodríguez,29,Femenino,Zacatecas
+723,1730,Sr. Ricardo Ontiveros,42,Femenino,Guerrero
+724,1731,Juana Negrón Escobar,50,Masculino,Tlaxcala
+725,1732,Guillermo Quiñónez Rivero,22,Masculino,Morelos
+726,1733,Gustavo Valle,65,Femenino,Campeche
+727,1734,Bernardo Benito Montañez Toro,45,Femenino,Tabasco
+728,1735,Srita. Nelly Ballesteros,47,Femenino,Sinaloa
+729,1736,Linda Tello,38,Masculino,Yucatán
+730,1737,Srita. María José Luna,54,Masculino,Colima
+731,1738,Yeni Alma Sandoval,63,Masculino,Durango
+732,1739,Mateo Eric de la Fuente,36,Femenino,Jalisco
+733,1740,Cristian Arias,43,Femenino,Tamaulipas
+734,1741,Mariano Felipe Cordero,38,Femenino,Morelos
+735,1742,Andrea Brito Oquendo,69,Masculino,Sonora
+736,1743,Helena Leal,62,Masculino,Veracruz de Ignacio de la Llave
+737,1744,Zacarías Villagómez Solorzano,23,Masculino,Tabasco
+738,1745,Luis Manuel Eduardo Cordero,24,Femenino,Chiapas
+739,1746,Rubén Bruno Lira,45,Masculino,Quintana Roo
+740,1747,Estefanía Judith Ruelas,51,Femenino,Yucatán
+741,1748,Eric Leal Padrón,43,Masculino,Durango
+742,1749,Lic. Trinidad Padilla,65,Masculino,Baja California Sur
+743,1750,Hermelinda Vanesa Granados,32,Masculino,Campeche
+744,1751,Estela Jaqueline Almonte Miranda,67,Femenino,Oaxaca
+745,1752,Ing. Óscar Calvillo,22,Femenino,México
+746,1753,Isaac Martín Mayorga Jiménez,51,Femenino,Tabasco
+747,1754,Sra. Cynthia Quintanilla,67,Masculino,Jalisco
+748,1756,Mariana Minerva Niño,40,Femenino,Campeche
+749,1757,Celia Barraza,33,Femenino,Oaxaca
+750,1758,Leonor Cervántez,27,Masculino,Baja California
+751,1759,Evelio Felipe Baeza Haro,30,Femenino,Baja California Sur
+752,1760,Amelia Isabela Farías Lara,56,Femenino,San Luis Potosí
+753,1761,Mayte Karla Castañeda Angulo,66,Femenino,Michoacán de Ocampo
+754,1762,Marisela Villegas Ramírez,29,Masculino,Guerrero
+755,1763,Patricia Nelly Montez Montañez,47,Masculino,Guanajuato
+756,1765,Sr. Horacio Amaya,61,Masculino,Sinaloa
+757,1766,Emiliano Vázquez Gallegos,58,Masculino,México
+758,1767,Felix Jiménez,27,Masculino,Tabasco
+759,1768,Alejandra Aguirre,22,Masculino,Yucatán
+760,1769,Eric Timoteo Aguilera Garrido,46,Masculino,Morelos
+761,1770,Dra. Yeni Laureano,68,Masculino,Tamaulipas
+762,1771,Irene María Cristina Hernádez,55,Femenino,Jalisco
+763,1772,Gabriela Teresa Soliz Osorio,40,Femenino,Chiapas
+764,1773,Pedro Noriega Valentín,37,Masculino,Nuevo León
+765,1774,Sr. Óliver Barela,46,Femenino,Querétaro
+766,1775,Ing. Hernán Ibarra,21,Masculino,Oaxaca
+767,1776,Eduardo Sierra,36,Femenino,Michoacán de Ocampo
+768,1777,Timoteo Páez Maya,59,Femenino,Distrito Federal
+769,1778,Pablo Lucero Huerta,57,Masculino,Tabasco
+770,1779,Julia Alta  Gracia Vergara,47,Femenino,Hidalgo
+771,1780,Zoé Garibay Téllez,46,Femenino,Yucatán
+772,1781,Mayte Macías de la Rosa,38,Masculino,Guerrero
+773,1782,Sr. Modesto Cazares,50,Femenino,Morelos
+774,1783,Cristal Meza,21,Masculino,Colima
+775,1784,José Garica,24,Masculino,Oaxaca
+776,1785,Hermelinda Jaqueline Hurtado,63,Femenino,Nuevo León
+777,1786,Bianca María Eugenia Avilés Vergara,50,Femenino,Coahuila de Zaragoza
+778,1787,Dalia Martha Casares Olivárez,20,Femenino,Oaxaca
+779,1788,Ana Catalina Chapa,63,Masculino,Hidalgo
+780,1789,Leticia Vargas Reyna,46,Femenino,Durango
+781,1790,Yolanda Dueñas Blanco,41,Masculino,Zacatecas
+782,1791,Ruby Díaz Marroquín,36,Masculino,Campeche
+783,1792,Mauricio Lara Fuentes,44,Masculino,Guanajuato
+784,1793,Srita. Marisela Bueno,61,Femenino,Distrito Federal
+785,1794,Ing. Salma Portillo,68,Masculino,Sonora
+786,1795,María Luisa Judith Acuña,22,Masculino,Baja California Sur
+787,1796,Débora Niño,24,Masculino,Aguascalientes
+788,1797,Mónica Espino Almanza,36,Masculino,Aguascalientes
+789,1798,Francisco Javier Montañez,64,Femenino,Oaxaca
+790,1799,Camilo Juan Carlos Santacruz Villalobos,39,Femenino,Oaxaca
+791,1800,Antonio Alonso Lugo López,55,Femenino,Veracruz de Ignacio de la Llave
+792,1801,Perla Soria,40,Masculino,Querétaro
+793,1802,Úrsula Carla Monroy,59,Masculino,Zacatecas
+794,1803,Cynthia de Anda Páez,26,Femenino,Baja California
+795,1804,Francisco Javier Ceja,37,Masculino,Jalisco
+796,1805,Sergio Santana de la O,59,Masculino,Chihuahua
+797,1806,Yeni Archuleta Núñez,70,Femenino,Morelos
+798,1808,Rosalia Arriaga,60,Femenino,Campeche
+799,1809,Agustín Alvaro Carrillo,59,Masculino,Tabasco
+800,1810,Juana Blanca Trujillo Hernádez,50,Masculino,Yucatán
+801,1811,Felix Abraham Madera Peres,19,Masculino,Chiapas
+802,1812,Estela Zelaya,37,Femenino,Distrito Federal
+803,1813,Aurora Mercedes Carvajal,31,Masculino,Nuevo León
+804,1814,Carlos Pablo Farías,67,Masculino,Hidalgo
+805,1815,Dr. José Carlos Parra,30,Femenino,Nuevo León
+806,1816,Alfredo Roberto Salgado Franco,26,Femenino,Yucatán
+807,1817,Elsa Acevedo Alcántar,22,Masculino,Colima
+808,1818,Salvador Oswaldo Córdova,68,Femenino,Colima
+809,1819,Ángela Campos,50,Femenino,Morelos
+810,1820,Mauro Lucio,60,Masculino,Morelos
+811,1821,Amelia Asunción Delgado Arenas,67,Femenino,Nuevo León
+812,1822,Teresa Marroquín Polanco,56,Masculino,Chihuahua
+813,1823,Alonso Abraham Chavarría,27,Femenino,Guanajuato
+814,1824,Isabel Quezada Jasso,29,Femenino,Colima
+815,1825,Indira Elizondo Carrera,64,Masculino,Sonora
+816,1826,María Estela Olmos,20,Masculino,Yucatán
+817,1827,Silvia Clara Carreón,41,Femenino,Distrito Federal
+818,1828,Eloy Cano Peña,46,Masculino,Yucatán
+819,1829,Ing. Cristal Ojeda,66,Masculino,Quintana Roo
+820,1830,Sra. Úrsula Cedillo,32,Femenino,Yucatán
+821,1831,Beatriz Lilia Quintana Arredondo,37,Masculino,Coahuila de Zaragoza
+822,1832,Ing. Adalberto Sosa,30,Masculino,México
+823,1833,Minerva Solorzano Cadena,61,Masculino,Tamaulipas
+824,1834,Óliver Montemayor,47,Masculino,Sinaloa
+825,1835,Rodrigo Vicente Ayala Alba,67,Masculino,Guanajuato
+826,1836,María Eugenia Saldivar,50,Masculino,Guanajuato
+827,1837,Óscar Javier Guajardo,28,Femenino,Querétaro
+828,1838,Sr. Patricio Garica,69,Femenino,Sinaloa
+829,1839,Elsa Angélica Rico,34,Femenino,Tlaxcala
+830,1840,Ing. Araceli Samaniego,59,Masculino,Tlaxcala
+831,1841,Bianca Salinas Almanza,41,Femenino,Chiapas
+832,1842,Lilia Alta  Gracia Valdés,63,Femenino,Aguascalientes
+833,1843,Tomás Wilfrido Maestas,36,Femenino,Jalisco
+834,1844,Indira Itzel Ayala Garica,66,Femenino,Veracruz de Ignacio de la Llave
+835,1845,Noemí Zapata Rojas,35,Masculino,San Luis Potosí
+836,1846,Berta Ariadna Garibay Acevedo,50,Femenino,Querétaro
+837,1847,Salma Lovato Trujillo,45,Femenino,San Luis Potosí
+838,1848,Alonso Emilio Salcedo,32,Masculino,Distrito Federal
+839,1849,Barbara Esparta Estévez,40,Femenino,Hidalgo
+840,1850,Julio César Flavio Reyna,44,Femenino,Hidalgo
+841,1851,Barbara Pedroza Arredondo,43,Masculino,Chihuahua
+842,1852,María Cristina Sofía Villalpando Santana,33,Masculino,Distrito Federal
+843,1853,Abril Mónica Arriaga Uribe,23,Masculino,Tamaulipas
+844,1854,Ing. Mercedes Díaz,32,Femenino,Guerrero
+845,1855,Camilo Julio Zapata Zelaya,38,Femenino,Puebla
+846,1856,Judith Peralta,63,Masculino,Michoacán de Ocampo
+847,1857,Lic. Jorge Lozano,68,Femenino,Tlaxcala
+848,1858,Darío Luis Zarate Sepúlveda,26,Femenino,Oaxaca
+849,1859,Graciela Uribe,36,Masculino,Jalisco
+850,1860,Fernando López,62,Femenino,Quintana Roo
+851,1861,Ernesto Pascual Torres Medrano,66,Masculino,Chihuahua
+852,1862,Noemí Rosado Verduzco,46,Femenino,Tabasco
+853,1863,Fabiola Pichardo,23,Femenino,Aguascalientes
+854,1864,Barbara Alvarado,34,Femenino,Sinaloa
+855,1865,Amador Andrés Feliciano Jaramillo,27,Masculino,Guanajuato
+856,1866,Ing. Diego Bañuelos,25,Masculino,Nuevo León
+857,1867,Reynaldo Apodaca,33,Masculino,Quintana Roo
+858,1868,Aurora Rocío Valenzuela Garrido,25,Femenino,Sinaloa
+859,1869,Pedro Loera,33,Masculino,Campeche
+860,1870,Julia Liliana Marroquín,58,Masculino,Campeche
+861,1871,Gilberto Fierro Quintero,22,Femenino,México
+862,1872,Patricia Treviño Zavala,49,Femenino,Hidalgo
+863,1873,Ignacio Rangel,58,Femenino,Guerrero
+864,1874,Esteban Eric Serrano,63,Femenino,Chihuahua
+865,1875,Amalia Lourdes Leiva,36,Masculino,Morelos
+866,1876,Emiliano Serafín Herrera Adame,18,Masculino,Querétaro
+867,1877,Wendolin Cecilia Arenas Corrales,33,Masculino,Puebla
+868,1878,Sra. Rosario Madera,29,Femenino,Zacatecas
+869,1879,Lic. Isabel Beltrán,51,Masculino,Puebla
+870,1880,Dulce María Enríquez,22,Femenino,Coahuila de Zaragoza
+871,1881,Celia Pelayo,42,Masculino,Sonora
+872,1882,Jos Francisco Gallardo,20,Masculino,Querétaro
+873,1883,Isabela Lozada Gamez,41,Masculino,Yucatán
+874,1884,Silvia Aguirre,65,Femenino,Chihuahua
+875,1885,Marcela Guajardo Guerrero,40,Femenino,Baja California Sur
+876,1886,Juana Carrera Olvera,40,Femenino,Morelos
+877,1887,Zoé Leyva,64,Femenino,Baja California
+878,1888,Jaqueline Serrano,67,Masculino,Tlaxcala
+879,1889,Amanda Francisca Espinoza Mayorga,26,Femenino,Colima
+880,1890,Emilio René Tejeda,40,Masculino,Aguascalientes
+881,1891,Fernando Fidel Pineda,70,Femenino,Chiapas
+882,1892,René Puga,67,Masculino,Coahuila de Zaragoza
+883,1893,Alberto Maximiliano Meraz Archuleta,62,Masculino,Colima
+884,1894,Amador Ernesto Heredia,58,Femenino,Coahuila de Zaragoza
+885,1895,Srita. Esperanza Pantoja,69,Femenino,Sinaloa
+886,1896,Ruby Leonor Prieto Mata,22,Masculino,Baja California
+887,1897,Tania Bianca Téllez,20,Masculino,Aguascalientes
+888,1898,Sra. Paola Armenta,30,Femenino,Coahuila de Zaragoza
+889,1899,Martha Caraballo Longoria,68,Femenino,Oaxaca
+890,1900,Sra. Eva Quezada,20,Masculino,Sinaloa
+891,1901,Soledad Alicia Rojo,37,Masculino,Guanajuato
+892,1902,Dulce María Chacón,70,Masculino,Sonora
+893,1903,Francisca Colón,34,Femenino,Oaxaca
+894,1904,Adela Uribe Vaca,66,Femenino,Durango
+895,1905,Alfredo Abelardo Vega,36,Masculino,Sonora
+896,1906,Nayeli Briones,67,Femenino,Oaxaca
+897,1907,Jorge Luis Galarza,59,Masculino,Tabasco
+898,1908,Carmen Cruz,35,Femenino,Guerrero
+899,1909,Víctor Hernádez,69,Masculino,Hidalgo
+900,1910,Espartaco Rufino Ayala,45,Masculino,Veracruz de Ignacio de la Llave
+901,1911,Anel López,65,Masculino,Coahuila de Zaragoza
+902,1912,Sr. Federico Vera,42,Masculino,Zacatecas
+903,1913,Isabel Cazares Gollum,29,Masculino,Chiapas
+904,1914,Sr. Evelio Matías,62,Masculino,Zacatecas
+905,1915,Hermelinda Rocío Malave Viera,41,Masculino,Durango
+906,1916,Lic. Itzel Mata,69,Femenino,Tamaulipas
+907,1917,Abelardo Jacobo Gurule García,64,Masculino,Tamaulipas
+908,1918,Ing. Daniel Meraz,23,Masculino,Yucatán
+909,1919,Marcela Isabel Magaña Ruiz,56,Femenino,Chiapas
+910,1920,Uriel Aurelio León Cintrón,52,Masculino,Hidalgo
+911,1921,Sr. Augusto Almaraz,38,Femenino,Baja California
+912,1922,Lic. Leonor Villanueva,23,Masculino,Jalisco
+913,1923,Rodolfo Hurtado Tórrez,60,Masculino,Yucatán
+914,1924,José Emilio Julio César Garica Villalpando,37,Masculino,Nuevo León
+915,1925,Miguel Pascual Segovia Bustamante,56,Masculino,Sonora
+916,1926,Martha Alarcón Griego,28,Masculino,Guanajuato
+917,1927,Carlota Ramírez,40,Masculino,Guanajuato
+918,1928,Rubén Rubén Concepción Roybal,20,Masculino,Quintana Roo
+919,1929,Francisco Saavedra Gómez,57,Masculino,Coahuila de Zaragoza
+920,1930,Ing. Gabriel Arias,35,Femenino,Jalisco
+921,1931,Isabela Oquendo,22,Masculino,Yucatán
+922,1932,Amanda Amalia Mejía Candelaria,41,Femenino,Nayarit
+923,1933,Dr. José María Ochoa,19,Femenino,San Luis Potosí
+924,1934,Sra. Minerva Heredia,56,Masculino,Sinaloa
+925,1935,Rafaél Palomino,20,Femenino,Quintana Roo
+926,1936,Mariana Rosario Zayas,22,Femenino,Aguascalientes
+927,1937,Carlota Quiñónez,67,Masculino,Guanajuato
+928,1938,Augusto Serrano,41,Masculino,Nayarit
+929,1939,Eduardo Escobar,54,Femenino,Guanajuato
+930,1940,Raquel Casanova Godínez,56,Femenino,Tabasco
+931,1941,Yuridia Carrera Rosario,61,Masculino,Yucatán
+932,1942,Diana Paulina Cuellar Partida,41,Masculino,Baja California
+933,1943,Alonso Cavazos,46,Femenino,Guanajuato
+934,1944,Porfirio Alfredo Vega Contreras,54,Femenino,Campeche
+935,1945,Gregorio Espartaco Sierra Palomino,51,Masculino,Baja California
+936,1946,Sr. Flavio Rangel,43,Masculino,Yucatán
+937,1947,Claudia Dulce María Partida Zaragoza,59,Masculino,Durango
+938,1948,Srita. Rosalia Segura,33,Femenino,Morelos
+939,1949,Jorge Mauro Ybarra Villanueva,19,Femenino,Coahuila de Zaragoza
+940,1950,José María Olmos,49,Masculino,Distrito Federal
+941,1951,Adán Felipe Solorzano,53,Femenino,Tabasco
+942,1952,Uriel Bernardo Díaz Rolón,34,Masculino,Baja California Sur
+943,1953,Martha Carvajal,63,Masculino,Colima
+944,1954,Sofía Caridad Zavala Tirado,31,Masculino,Aguascalientes
+945,1955,Miriam Linda Nevárez,62,Masculino,Baja California Sur
+946,1956,Lourdes Girón,30,Femenino,Yucatán
+947,1957,Irene Patricia Velásquez,26,Femenino,Chiapas
+948,1958,Carla Esparta Romero,46,Femenino,México
+949,1959,Horacio Timoteo Tórrez,63,Masculino,Tabasco
+950,1960,Dr. Abelardo Aguilar,23,Masculino,Chihuahua
+951,1961,Abril Núñez,60,Masculino,Jalisco
+952,1962,Leticia Nájera Carbajal,63,Femenino,Durango
+953,1963,Silvia Paola Hernandes,53,Masculino,Morelos
+954,1964,Lorena Vallejo,37,Femenino,San Luis Potosí
+955,1965,Dra. Trinidad Osorio,63,Femenino,Jalisco
+956,1966,Nelly Noelia Rosas,68,Masculino,Guerrero
+957,1967,Noemí Vaca Roybal,50,Femenino,Morelos
+958,1968,Ing. Leonardo Chavarría,25,Femenino,Chihuahua
+959,1969,Mateo Cuellar,68,Femenino,Chiapas
+960,1970,Pedro Pacheco,33,Masculino,Querétaro
+961,1971,Rocío Ávila,19,Masculino,Guanajuato
+962,1972,Salma Abril Bustos,53,Masculino,Durango
+963,1973,Pilar Luisa Bueno Barela,47,Femenino,Morelos
+964,1974,José Luis Bétancourt,57,Femenino,Baja California Sur
+965,1975,Laura Rocío Soliz,22,Masculino,Nuevo León
+966,1976,Sra. Concepción Saldaña,43,Masculino,Tlaxcala
+967,1977,Felipe Sisneros Lira,51,Masculino,Hidalgo
+968,1978,Timoteo Segovia Sevilla,67,Masculino,México
+969,1979,Srita. Tania Aranda,70,Femenino,San Luis Potosí
+970,1980,Abel Cotto,26,Masculino,Colima
+971,1981,Lic. José Ortega,59,Femenino,Sonora
+972,1982,Srita. Minerva Alejandro,46,Masculino,Coahuila de Zaragoza
+973,1983,Roberto Horacio Valdivia,61,Masculino,Quintana Roo
+974,1984,Esther Gastélum Zelaya,26,Femenino,Hidalgo
+975,1985,Leonor Olivia Acuña Ibarra,67,Femenino,Guerrero
+976,1986,Mayte Barbara Valdivia,45,Femenino,Coahuila de Zaragoza
+977,1987,Francisca Molina,25,Femenino,Chihuahua
+978,1988,Esparta Terrazas,37,Femenino,Morelos
+979,1989,Josefina Norma Roybal Guerrero,28,Masculino,Querétaro
+980,1990,Trinidad María Cristina Villa Amaya,63,Femenino,Yucatán
+981,1991,Gregorio Armando Olivas,40,Masculino,México
+982,1992,Jacobo Paz,23,Masculino,Quintana Roo
+983,1993,Nancy Aguirre,30,Masculino,Morelos
+984,1994,Hugo Cabán,26,Masculino,Sonora
+985,1995,Ángela Urrutia Domínguez,57,Femenino,Yucatán
+986,1996,Irma Gamez Vela,50,Femenino,Nayarit
+987,1997,Eugenio Pablo Feliciano Gollum,55,Femenino,Michoacán de Ocampo
+988,1998,Dr. Gabino Fierro,28,Masculino,Michoacán de Ocampo
+989,1999,Dra. Cecilia Carbajal,54,Femenino,Chihuahua

@@ -1,0 +1,17 @@
+id,nombre,categoria,precio_unitario,stock,imagen_url
+1,Crema Facial Hidratante,Beauty,388.02,16,https://picsum.photos/seed/producto1/400/400
+2,Set de Brochas,Beauty,447.51,72,https://picsum.photos/seed/producto2/400/400
+3,Perfume 50ml,Beauty,145.54,198,https://picsum.photos/seed/producto3/400/400
+4,Shampoo Reparador,Beauty,75.21,199,https://picsum.photos/seed/producto4/400/400
+5,Polera Algodón,Clothing,535.83,32,https://picsum.photos/seed/producto5/400/400
+6,Jeans Slim Fit,Clothing,359.77,18,https://picsum.photos/seed/producto6/400/400
+7,Chaqueta Cortavientos,Clothing,32.54,65,https://picsum.photos/seed/producto7/400/400
+8,Zapatillas Urbanas,Clothing,150.93,164,https://picsum.photos/seed/producto8/400/400
+9,Auriculares Bluetooth,Electronics,31.28,60,https://picsum.photos/seed/producto9/400/400
+10,Mouse Inalámbrico,Electronics,434.06,189,https://picsum.photos/seed/producto10/400/400
+11,Cargador USB-C,Electronics,334.12,66,https://picsum.photos/seed/producto11/400/400
+12,Parlante Portátil,Electronics,278.2,81,https://picsum.photos/seed/producto12/400/400
+13,Set de Ollas,Home,488.71,11,https://picsum.photos/seed/producto13/400/400
+14,Licuadora Compacta,Home,459.23,50,https://picsum.photos/seed/producto14/400/400
+15,Juego de Toallas,Home,423.9,97,https://picsum.photos/seed/producto15/400/400
+16,Lámpara de Escritorio,Home,179.16,65,https://picsum.photos/seed/producto16/400/400
