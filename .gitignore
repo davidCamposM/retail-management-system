@@ -20,6 +20,12 @@ dist-ssr
 !.env.example
 !example.env
 
+# Python virtual environments
+venv/
+.venv/
+__pycache__/
+*.pyc
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
