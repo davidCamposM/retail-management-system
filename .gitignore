@@ -26,6 +26,11 @@ venv/
 __pycache__/
 *.pyc
 
+# AI tooling config/skills (local only, not part of the app)
+.claude/
+.agents/
+.windsurf/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
