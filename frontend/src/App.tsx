@@ -3,6 +3,9 @@ import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
+import Productos from './pages/Productos'
+import Ventas from './pages/Ventas'
+import Historial from './pages/Historial'
 
 function App() {
   return (
@@ -15,6 +18,30 @@ function App() {
             element={
               <ProtectedRoute>
                 <Dashboard />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/productos"
+            element={
+              <ProtectedRoute>
+                <Productos />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/ventas"
+            element={
+              <ProtectedRoute>
+                <Ventas />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/historial"
+            element={
+              <ProtectedRoute>
+                <Historial />
               </ProtectedRoute>
             }
           />

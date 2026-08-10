@@ -29,6 +29,7 @@ model User {
   password  String
   role      Role
   createdAt DateTime @default(now())
+  ventas    Venta[]
 }
 
 model Producto {
@@ -53,9 +54,11 @@ model Cliente {
 
 model Venta {
   id                   Int        @id @default(autoincrement())
-  orderIdOriginal      Int        @unique
-  clienteId            Int
-  cliente              Cliente    @relation(fields: [clienteId], references: [id])
+  orderIdOriginal      Int?       @unique
+  vendedorId           Int
+  vendedor             User       @relation(fields: [vendedorId], references: [id])
+  clienteId            Int?
+  cliente              Cliente?   @relation(fields: [clienteId], references: [id])
   productoId           Int
   producto             Producto   @relation(fields: [productoId], references: [id])
   cantidad             Int
@@ -63,8 +66,8 @@ model Venta {
   descuento            Float
   montoTotal           Float
   metodoPago           MetodoPago
-  fecha                DateTime
-  calificacionCliente  Float
-  diasEntrega          Int
+  fecha                DateTime   @default(now())
+  calificacionCliente  Float?
+  diasEntrega          Int?
   region               String
 }

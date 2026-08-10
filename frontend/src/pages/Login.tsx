@@ -2,6 +2,7 @@ import { useState, type FormEvent } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import { loginRequest } from '../lib/api'
+import { DEFAULT_ROUTE_BY_ROLE } from '../lib/permissions'
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -20,7 +21,10 @@ export default function Login() {
     try {
       const { token } = await loginRequest(email, password)
       login(token)
-      navigate('/dashboard')
+
+      const payload = JSON.parse(atob(token.split('.')[1]))
+      navigate(DEFAULT_ROUTE_BY_ROLE[payload.role as 'ADMIN' | 'VENDEDOR'])
+      
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Error inesperado')
     } finally {
