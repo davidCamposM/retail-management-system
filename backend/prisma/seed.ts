@@ -54,19 +54,27 @@ async function main() {
   });
 
   console.log(`Insertando ${productosCsv.length} productos...`);
+  
   const productoIdMap = new Map<string, number>();
   for (const row of productosCsv) {
+    const precioUnitario = Number(row.precio_unitario);
+    // Margen sintético entre 25% y 45% — el dataset original no trae costo real.
+    const margen = 0.25 + Math.random() * 0.2;
+    const costoUnitario = Math.round(precioUnitario * (1 - margen) * 100) / 100;
+
     const producto = await prisma.producto.create({
       data: {
         nombre: row.nombre,
         categoria: row.categoria,
-        precioUnitario: Number(row.precio_unitario),
+        precioUnitario,
+        costoUnitario,
         stock: Number(row.stock),
         imagenUrl: row.imagen_url,
       },
     });
     productoIdMap.set(row.id, producto.id);
   }
+
 
   console.log(`Insertando ${clientesCsv.length} clientes...`);
   const clienteIdMap = new Map<string, number>();

@@ -17,6 +17,6 @@ export function requireRole(...allowedRoles: string[]) {
       return res.status(403).json({ error: "No tienes permisos para esta acción" });
 
     }
-    next();
+    return next();
   };
 }

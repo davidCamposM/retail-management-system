@@ -24,12 +24,14 @@ enum MetodoPago {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  role      Role
-  createdAt DateTime @default(now())
-  ventas    Venta[]
+  id                Int       @id @default(autoincrement())
+  email             String    @unique
+  password          String
+  role              Role
+  createdAt         DateTime  @default(now())
+  resetTokenHash    String?   @unique
+  resetTokenExpiry  DateTime?
+  ventas            Venta[]
 }
 
 model Producto {
@@ -37,6 +39,7 @@ model Producto {
   nombre         String
   categoria      String
   precioUnitario Float
+  costoUnitario  Float
   stock          Int
   imagenUrl      String?
   ventas         Venta[]

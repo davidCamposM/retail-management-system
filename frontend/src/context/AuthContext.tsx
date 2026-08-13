@@ -5,7 +5,7 @@ type Role = 'ADMIN' | 'VENDEDOR'
 interface AuthContextType {
   token: string | null
   role: Role | null
-  login: (token: string) => void
+  login: (token: string, remember: boolean) => void
   logout: () => void
   isAuthenticated: boolean
 }
@@ -21,18 +21,29 @@ function decodeRole(token: string): Role | null {
   }
 }
 
-export function AuthProvider({ children }: { children: ReactNode }) {
-  const [token, setToken] = useState<string | null>(
-    () => localStorage.getItem('token')
-  )
+// "Recordarme" decide dónde vive el token: localStorage sobrevive a cerrar el
+// navegador, sessionStorage se borra solo al cerrar la pestaña/ventana.
+function readStoredToken(): string | null {
+  return localStorage.getItem('token') ?? sessionStorage.getItem('token')
+}
 
-  function login(newToken: string) {
-    localStorage.setItem('token', newToken)
+export function AuthProvider({ children }: { children: ReactNode }) {
+  const [token, setToken] = useState<string | null>(readStoredToken)
+
+  function login(newToken: string, remember: boolean) {
+    localStorage.removeItem('token')
+    sessionStorage.removeItem('token')
+    if (remember) {
+      localStorage.setItem('token', newToken)
+    } else {
+      sessionStorage.setItem('token', newToken)
+    }
     setToken(newToken)
   }
 
   function logout() {
     localStorage.removeItem('token')
+    sessionStorage.removeItem('token')
     setToken(null)
   }
 

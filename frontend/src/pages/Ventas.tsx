@@ -1,6 +1,9 @@
 import { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
-import { getProductos, createVenta, type Producto, type MetodoPago } from '../lib/api'
+import { getProductos, createVenta, getErrorMessage, type Producto, type MetodoPago } from '../lib/api'
+import ErrorState from '../components/ErrorState'
+import Skeleton from '../components/Skeleton'
+import Toast from '../components/Toast'
 
 const CATEGORIAS = ['Todas', 'Electronics', 'Clothing', 'Beauty', 'Home']
 const STORE_REGION = 'Metropolitana'
@@ -32,22 +35,37 @@ export default function Ventas() {
   const [loading, setLoading] = useState(true)
   const [cobrando, setCobrando] = useState(false)
   const [error, setError] = useState<string | null>(null)
+  const [loadError, setLoadError] = useState<string | null>(null)
+  const [reloadKey, setReloadKey] = useState(0)
+  const [toast, setToast] = useState<string | null>(null)
 
   useEffect(() => {
+    let cancelado = false
+
     async function load() {
       if (!token) return
       setLoading(true)
+      setLoadError(null)
       try {
         const data = await getProductos(token, {
           categoria: categoria !== 'Todas' ? categoria : undefined,
         })
+        if (cancelado) return
         setProductos(data)
+      } catch (err) {
+        if (!cancelado) {
+          setLoadError(getErrorMessage(err, 'Error inesperado al cargar los productos'))
+        }
       } finally {
-        setLoading(false)
+        if (!cancelado) setLoading(false)
       }
     }
+
     load()
-  }, [token, categoria])
+    return () => {
+      cancelado = true
+    }
+  }, [token, categoria, reloadKey])
 
   function addToCart(producto: Producto) {
     setCart((prev) => {
@@ -78,8 +96,12 @@ export default function Ventas() {
     if (!token || cart.length === 0) return
     setError(null)
     setCobrando(true)
+
+    const itemsAProcesar = cart
+    const registrados: number[] = []
+
     try {
-      for (const item of cart) {
+      for (const item of itemsAProcesar) {
         await createVenta(token, {
           productoId: item.producto.id,
           cantidad: item.cantidad,
@@ -87,23 +109,32 @@ export default function Ventas() {
           metodoPago,
           region: STORE_REGION,
         })
+        registrados.push(item.producto.id)
       }
       setCart([])
       setDescuento(0)
+      setToast('Venta registrada correctamente.')
       const data = await getProductos(token, {
         categoria: categoria !== 'Todas' ? categoria : undefined,
       })
       setProductos(data)
     } catch (err) {
-      setError(err instanceof Error ? err.message : 'Error al registrar la venta')
+      // Saca del carrito lo que ya se alcanzó a cobrar, para no volver a cobrarlo al reintentar.
+      setCart((prev) => prev.filter((item) => !registrados.includes(item.producto.id)))
+      const restantes = itemsAProcesar.length - registrados.length
+      setError(
+        registrados.length > 0
+          ? `Se registraron ${registrados.length} de ${itemsAProcesar.length} productos. Los ${restantes} restantes quedaron en el carrito — revisa e intenta de nuevo.`
+          : getErrorMessage(err, 'Error al registrar la venta')
+      )
     } finally {
       setCobrando(false)
     }
   }
 
   return (
-    <div className="px-8 py-8 flex gap-6">
-      <div className="flex-1">
+    <div className="px-4 sm:px-8 py-6 sm:py-8 flex flex-col lg:flex-row gap-6">
+      <div className="flex-1 min-w-0">
         <h1 className="font-serif text-2xl text-cream-50 mb-6">Nueva venta</h1>
 
         <div className="flex gap-2 flex-wrap mb-6">
@@ -123,7 +154,20 @@ export default function Ventas() {
         </div>
 
         {loading ? (
-          <p className="text-sage-400">Cargando...</p>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+            {Array.from({ length: 6 }).map((_, i) => (
+              <div key={i} className="bg-forest-900 border border-forest-800 rounded-md p-4">
+                <Skeleton className="w-full h-28 mb-3" />
+                <Skeleton className="h-4 w-3/4 mb-2" />
+                <div className="flex items-center justify-between">
+                  <Skeleton className="h-4 w-14" />
+                  <Skeleton className="w-11 h-11" />
+                </div>
+              </div>
+            ))}
+          </div>
+        ) : loadError ? (
+          <ErrorState message={loadError} onRetry={() => setReloadKey((k) => k + 1)} />
         ) : (
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {productos.map((p) => {
@@ -138,7 +182,8 @@ export default function Ventas() {
                     <button
                       onClick={() => addToCart(p)}
                       disabled={disponible <= 0}
-                      className="w-7 h-7 flex items-center justify-center border border-gold-500 text-gold-500 rounded-md hover:bg-gold-500 hover:text-forest-950 transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gold-500"
+                      aria-label={`Agregar ${p.nombre} al carrito`}
+                      className="w-11 h-11 flex items-center justify-center border border-gold-500 text-gold-500 rounded-md hover:bg-gold-500 hover:text-forest-950 transition-colors disabled:opacity-30 disabled:hover:bg-transparent disabled:hover:text-gold-500 text-lg"
                     >
                       +
                     </button>
@@ -150,7 +195,7 @@ export default function Ventas() {
         )}
       </div>
 
-      <div className="w-80 shrink-0 bg-forest-900 border border-forest-800 rounded-md p-5 h-fit">
+      <div className="w-full lg:w-80 lg:shrink-0 bg-forest-900 border border-forest-800 rounded-md p-5 h-fit lg:sticky lg:top-6 lg:self-start">
         <div className="flex items-center justify-between mb-4">
           <h2 className="font-serif text-lg text-cream-50">Venta actual</h2>
           <span className="text-sage-400 text-sm">{cart.length} items</span>
@@ -176,7 +221,7 @@ export default function Ventas() {
                 </div>
                 <button
                   onClick={() => removeFromCart(item.producto.id)}
-                  className="text-rose-500 hover:text-rose-400 text-xs"
+                  className="text-rose-500 hover:text-rose-400 text-xs px-2 py-2 -mr-2"
                 >
                   Quitar
                 </button>
@@ -242,6 +287,8 @@ export default function Ventas() {
           {cobrando ? 'Procesando...' : `Cobrar ${formatCurrency(total)}`}
         </button>
       </div>
+
+      {toast && <Toast message={toast} onDismiss={() => setToast(null)} />}
     </div>
   )
 }

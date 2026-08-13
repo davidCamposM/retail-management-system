@@ -1,54 +1,142 @@
-const KPIS = [
-  { label: 'Ventas totales (mes)', value: '$48.750.000', delta: '+12,4%', positive: true },
-  { label: 'Ticket promedio', value: '$38.900', delta: '-1,8%', positive: false },
-  { label: 'Ganancia neta', value: '$14.230.000', delta: '+8,7%', positive: true },
-  { label: 'Órdenes', value: '1.253', delta: '+5,2%', positive: true },
-]
-
-const VENTAS_POR_MES = [
-  { mes: 'Mar', valor: 38200000 },
-  { mes: 'Abr', valor: 41500000 },
-  { mes: 'May', valor: 36800000 },
-  { mes: 'Jun', valor: 44100000 },
-  { mes: 'Jul', valor: 42300000 },
-  { mes: 'Ago', valor: 48750000 },
-]
-
-const TOP_PRODUCTOS = [
-  { nombre: 'Smartwatch FitPulse 2', monto: 18400000 },
-  { nombre: 'Silla Gamer ProSeat', monto: 14200000 },
-  { nombre: 'Chaqueta Impermeable TrailTech', monto: 11100000 },
-  { nombre: 'Zapatillas Urban Runner', monto: 9800000 },
-]
-
-const VENTAS_POR_REGION = [
-  { region: 'Metropolitana', porcentaje: 52 },
-  { region: 'Valparaíso', porcentaje: 18 },
-  { region: 'Biobío', porcentaje: 14 },
-  { region: 'Antofagasta', porcentaje: 9 },
-  { region: 'Araucanía', porcentaje: 7 },
-]
+import { useEffect, useState } from 'react'
+import { useAuth } from '../context/AuthContext'
+import { getDashboard, getErrorMessage, type DashboardData } from '../lib/api'
+import ErrorState from '../components/ErrorState'
+import Skeleton from '../components/Skeleton'
 
 function formatCurrency(value: number) {
-  return `$${value.toLocaleString('es-CL')}`
+  return `$${Math.round(value).toLocaleString('es-CL')}`
+}
+
+function primerDiaDelMes() {
+  const d = new Date()
+  return new Date(d.getFullYear(), d.getMonth(), 1).toISOString().slice(0, 10)
+}
+
+function hoy() {
+  return new Date().toISOString().slice(0, 10)
 }
 
 export default function Dashboard() {
-  const maxVenta = Math.max(...VENTAS_POR_MES.map((v) => v.valor))
-  const maxTopProducto = Math.max(...TOP_PRODUCTOS.map((p) => p.monto))
+  const { token } = useAuth()
+  const [data, setData] = useState<DashboardData | null>(null)
+  const [fechaDesde, setFechaDesde] = useState(primerDiaDelMes())
+  const [fechaHasta, setFechaHasta] = useState(hoy())
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [reloadKey, setReloadKey] = useState(0)
+
+  useEffect(() => {
+    let cancelado = false
+
+    async function load() {
+      if (!token) return
+      setLoading(true)
+      setError(null)
+      try {
+        const result = await getDashboard(token, { fecha_desde: fechaDesde, fecha_hasta: fechaHasta })
+        if (cancelado) return
+        setData(result)
+      } catch (err) {
+        if (!cancelado) {
+          setError(getErrorMessage(err, 'Error inesperado al cargar el dashboard'))
+        }
+      } finally {
+        if (!cancelado) setLoading(false)
+      }
+    }
+
+    load()
+    return () => {
+      cancelado = true
+    }
+  }, [token, fechaDesde, fechaHasta, reloadKey])
+
+  if (loading) {
+    return (
+      <div className="px-4 sm:px-8 py-6 sm:py-8">
+        <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+          <Skeleton className="h-8 w-40" />
+          <Skeleton className="h-9 w-56" />
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+          {Array.from({ length: 4 }).map((_, i) => (
+            <div key={i} className="bg-forest-900 border border-forest-800 rounded-md p-5">
+              <Skeleton className="h-4 w-24 mb-3" />
+              <Skeleton className="h-7 w-32 mb-2" />
+              <Skeleton className="h-3 w-28" />
+            </div>
+          ))}
+        </div>
+        <div className="bg-forest-900 border border-forest-800 rounded-md p-6 mb-6">
+          <Skeleton className="h-5 w-32 mb-6" />
+          <Skeleton className="h-40 w-full" />
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {Array.from({ length: 2 }).map((_, i) => (
+            <div key={i} className="bg-forest-900 border border-forest-800 rounded-md p-6">
+              <Skeleton className="h-5 w-32 mb-5" />
+              <div className="space-y-4">
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+                <Skeleton className="h-4 w-full" />
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  if (error || !data) {
+    return (
+      <div className="px-4 sm:px-8 py-6 sm:py-8">
+        <ErrorState message={error ?? undefined} onRetry={() => setReloadKey((k) => k + 1)} />
+      </div>
+    )
+  }
+
+  const KPIS = [
+    { label: 'Ventas totales', value: formatCurrency(data.kpis.ventasTotales), delta: data.kpis.ventasTotalesDelta },
+    { label: 'Ticket promedio', value: formatCurrency(data.kpis.ticketPromedio), delta: data.kpis.ticketPromedioDelta },
+    { label: 'Ganancia neta', value: formatCurrency(data.kpis.gananciaNeta), delta: null },
+    { label: 'Órdenes', value: data.kpis.ordenes.toLocaleString('es-CL'), delta: data.kpis.ordenesDelta },
+  ]
+
+  const maxVenta = Math.max(...data.ventasPorMes.map((v) => v.valor), 1)
+  const maxTopProducto = Math.max(...data.topProductos.map((p) => p.monto), 1)
 
   return (
-    <div className="px-8 py-8">
-      <h1 className="font-serif text-2xl text-cream-50 mb-8">Dashboard</h1>
+    <div className="px-4 sm:px-8 py-6 sm:py-8">
+      <div className="flex items-center justify-between mb-8 flex-wrap gap-4">
+        <h1 className="font-serif text-2xl text-cream-50">Dashboard</h1>
+        <div className="flex items-center gap-2">
+          <input
+            type="date"
+            value={fechaDesde}
+            onChange={(e) => setFechaDesde(e.target.value)}
+            className="bg-forest-900 border border-forest-800 rounded-md px-3 py-2 text-cream-50 text-sm focus:outline-none focus:border-gold-500"
+          />
+          <span className="text-sage-400 text-sm">a</span>
+          <input
+            type="date"
+            value={fechaHasta}
+            onChange={(e) => setFechaHasta(e.target.value)}
+            className="bg-forest-900 border border-forest-800 rounded-md px-3 py-2 text-cream-50 text-sm focus:outline-none focus:border-gold-500"
+          />
+        </div>
+      </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         {KPIS.map((kpi) => (
           <div key={kpi.label} className="bg-forest-900 border border-forest-800 rounded-md p-5">
             <p className="text-sage-400 text-sm mb-2">{kpi.label}</p>
             <p className="text-cream-50 text-2xl font-semibold mb-1">{kpi.value}</p>
-            <p className={`text-sm ${kpi.positive ? 'text-teal-500' : 'text-rose-500'}`}>
-              {kpi.positive ? '↑' : '↓'} {kpi.delta} vs. mes anterior
-            </p>
+            {kpi.delta !== null && (
+              <p className={`text-sm ${kpi.delta >= 0 ? 'text-teal-500' : 'text-rose-500'}`}>
+                {kpi.delta >= 0 ? '↑' : '↓'} {Math.abs(kpi.delta).toFixed(1)}% vs. período anterior
+              </p>
+            )}
           </div>
         ))}
       </div>
@@ -56,7 +144,7 @@ export default function Dashboard() {
       <div className="bg-forest-900 border border-forest-800 rounded-md p-6 mb-6">
         <h2 className="font-serif text-lg text-cream-50 mb-6">Ventas por mes</h2>
         <div className="flex items-end justify-between gap-4 h-48">
-          {VENTAS_POR_MES.map((v) => (
+          {data.ventasPorMes.map((v) => (
             <div key={v.mes} className="flex-1 flex flex-col items-center gap-2 group relative">
               <div className="relative w-full flex justify-center" style={{ height: '160px' }}>
                 <div
@@ -73,41 +161,74 @@ export default function Dashboard() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
         <div className="bg-forest-900 border border-forest-800 rounded-md p-6">
           <h2 className="font-serif text-lg text-cream-50 mb-5">Top productos</h2>
           <div className="space-y-4">
-            {TOP_PRODUCTOS.map((p) => (
+            {data.topProductos.map((p) => (
               <div key={p.nombre}>
                 <div className="flex items-center justify-between text-sm mb-1">
                   <span className="text-cream-50">{p.nombre}</span>
                   <span className="text-sage-400">{formatCurrency(p.monto)}</span>
                 </div>
                 <div className="h-2 rounded-full bg-forest-800 overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-gold-500"
-                    style={{ width: `${(p.monto / maxTopProducto) * 100}%` }}
-                  />
+                  <div className="h-full rounded-full bg-gold-500" style={{ width: `${(p.monto / maxTopProducto) * 100}%` }} />
                 </div>
               </div>
             ))}
+            {data.topProductos.length === 0 && <p className="text-sage-400 text-sm">Sin ventas en este período.</p>}
           </div>
         </div>
 
         <div className="bg-forest-900 border border-forest-800 rounded-md p-6">
           <h2 className="font-serif text-lg text-cream-50 mb-5">Ventas por región</h2>
           <div className="space-y-4">
-            {VENTAS_POR_REGION.map((r) => (
+            {data.ventasPorRegion.map((r) => (
               <div key={r.region}>
                 <div className="flex items-center justify-between text-sm mb-1">
                   <span className="text-cream-50">{r.region}</span>
                   <span className="text-sage-400">{r.porcentaje}%</span>
                 </div>
                 <div className="h-2 rounded-full bg-forest-800 overflow-hidden">
-                  <div
-                    className="h-full rounded-full bg-gold-500"
-                    style={{ width: `${r.porcentaje}%` }}
-                  />
+                  <div className="h-full rounded-full bg-gold-500" style={{ width: `${r.porcentaje}%` }} />
+                </div>
+              </div>
+            ))}
+            {data.ventasPorRegion.length === 0 && <p className="text-sage-400 text-sm">Sin ventas en este período.</p>}
+          </div>
+        </div>
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div className="bg-forest-900 border border-forest-800 rounded-md p-6">
+          <h2 className="font-serif text-lg text-cream-50 mb-5">Margen por categoría</h2>
+          <div className="space-y-4">
+            {data.margenPorCategoria.map((m) => (
+              <div key={m.categoria}>
+                <div className="flex items-center justify-between text-sm mb-1">
+                  <span className="text-cream-50">{m.categoria}</span>
+                  <span className="text-sage-400">{m.margen}%</span>
+                </div>
+                <div className="h-2 rounded-full bg-forest-800 overflow-hidden">
+                  <div className="h-full rounded-full bg-teal-500" style={{ width: `${m.margen}%` }} />
+                </div>
+              </div>
+            ))}
+            {data.margenPorCategoria.length === 0 && <p className="text-sage-400 text-sm">Sin ventas en este período.</p>}
+          </div>
+        </div>
+
+        <div className="bg-forest-900 border border-forest-800 rounded-md p-6">
+          <h2 className="font-serif text-lg text-cream-50 mb-5">Demografía de clientes (por edad)</h2>
+          <div className="space-y-4">
+            {data.demografiaClientes.map((d) => (
+              <div key={d.rango}>
+                <div className="flex items-center justify-between text-sm mb-1">
+                  <span className="text-cream-50">{d.rango} años</span>
+                  <span className="text-sage-400">{d.porcentaje}%</span>
+                </div>
+                <div className="h-2 rounded-full bg-forest-800 overflow-hidden">
+                  <div className="h-full rounded-full bg-gold-500" style={{ width: `${d.porcentaje}%` }} />
                 </div>
               </div>
             ))}

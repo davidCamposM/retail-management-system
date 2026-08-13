@@ -2,30 +2,54 @@ import { Request, Response } from "express";
 import prisma from "../lib/prisma";
 
 export async function listVentas(req: Request, res: Response) {
-  const { fecha_desde, fecha_hasta, vendedorId, region } = req.query;
+  const { fecha_desde, fecha_hasta, vendedorId, region, search } = req.query;
 
   const isAdmin = req.user?.role === "ADMIN";
 
-  const ventas = await prisma.venta.findMany({
-    where: {
-      vendedorId: isAdmin
-        ? vendedorId ? Number(vendedorId) : undefined
-        : req.user?.id,
-      region: region ? String(region) : undefined,
-      fecha: {
-        gte: fecha_desde ? new Date(String(fecha_desde)) : undefined,
-        lte: fecha_hasta ? new Date(String(fecha_hasta)) : undefined,
-      },
-    },
-    include: {
-      cliente: true,
-      producto: true,
-      vendedor: { select: { id: true, email: true } },
-    },
-    orderBy: { fecha: "desc" },
-  });
+  const page = Math.max(1, Number(req.query.page) || 1);
+  const pageSize = Math.min(100, Math.max(1, Number(req.query.pageSize) || 25));
 
-  res.json(ventas);
+  const where = {
+    vendedorId: isAdmin
+      ? vendedorId ? Number(vendedorId) : undefined
+      : req.user?.id,
+    region: region ? String(region) : undefined,
+    fecha: {
+      gte: fecha_desde ? new Date(String(fecha_desde)) : undefined,
+      lte: fecha_hasta ? new Date(String(fecha_hasta)) : undefined,
+    },
+    ...(search
+      ? {
+          OR: [
+            { cliente: { nombre: { contains: String(search), mode: "insensitive" as const } } },
+            { vendedor: { email: { contains: String(search), mode: "insensitive" as const } } },
+          ],
+        }
+      : {}),
+  };
+
+  const [ventas, total] = await Promise.all([
+    prisma.venta.findMany({
+      where,
+      include: {
+        cliente: true,
+        producto: true,
+        vendedor: { select: { id: true, email: true } },
+      },
+      orderBy: { fecha: "desc" },
+      skip: (page - 1) * pageSize,
+      take: pageSize,
+    }),
+    prisma.venta.count({ where }),
+  ]);
+
+  res.json({
+    data: ventas,
+    total,
+    page,
+    pageSize,
+    totalPages: Math.max(1, Math.ceil(total / pageSize)),
+  });
 }
 
 export async function createVenta(req: Request, res: Response) {
@@ -72,5 +96,5 @@ export async function createVenta(req: Request, res: Response) {
     return nuevaVenta;
   });
 
-  res.status(201).json(venta);
+  return res.status(201).json(venta);
 }

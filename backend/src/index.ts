@@ -5,6 +5,7 @@ import authRoutes from "./routes/auth.routes";
 import productoRoutes from "./routes/producto.routes";
 import ventaRoutes from "./routes/ventas.routes";
 import usuarioRoutes from "./routes/usuario.routes";
+import reporteRoutes from "./routes/reporte.routes";
 
 
 const app = express();
@@ -25,6 +26,7 @@ app.use("/auth", authRoutes);
 app.use("/productos", productoRoutes);
 app.use("/ventas", ventaRoutes);
 app.use("/usuarios", usuarioRoutes);
+app.use("/reportes", reporteRoutes);
 //------------------------------------------------------------------------------
 
 

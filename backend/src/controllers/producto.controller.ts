@@ -35,7 +35,7 @@ export async function getProducto(req: Request, res: Response) {
     return res.status(404).json({ error: "Producto no encontrado" });
   }
 
-  res.json(producto);
+  return res.json(producto);
 }
 // ------------------------------------------------------------------------------
 
@@ -52,17 +52,22 @@ export async function createProducto(req: Request, res: Response) {
     });
   }
 
+  // Margen sintético entre 25% y 45%, mismo criterio que el seed histórico.
+  const margen = 0.25 + Math.random() * 0.2;
+  const costoUnitario = Math.round(precioUnitario * (1 - margen) * 100) / 100;
+
   const producto = await prisma.producto.create({
     data: {
       nombre,
       categoria,
       precioUnitario,
+      costoUnitario,
       stock,
       imagenUrl: imagenUrl || placeholderImageFor(categoria),
     },
   });
 
-  res.status(201).json(producto);
+  return res.status(201).json(producto);
 }
 // ------------------------------------------------------------------------------
 
@@ -83,7 +88,7 @@ export async function updateProducto(req: Request, res: Response) {
     data: { nombre, categoria, precioUnitario, stock, imagenUrl },
   });
 
-  res.json(producto);
+  return res.json(producto);
 }
 // ------------------------------------------------------------------------------
 
@@ -101,7 +106,7 @@ export async function deleteProducto(req: Request, res: Response) {
 
   await prisma.producto.delete({ where: { id } });
 
-  res.status(204).send();
+  return res.status(204).send();
 }
 // ------------------------------------------------------------------------------
 

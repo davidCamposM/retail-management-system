@@ -28,7 +28,7 @@ try {
 
     const payload = jwt.verify(token, process.env.JWT_SECRET as string) as JwtPayload;
     req.user = payload;
-    next();
+    return next();
 
   } catch {
 
