@@ -10,8 +10,6 @@ generator client {
 
 datasource db {
   provider = "postgresql"
-  url       = env("DATABASE_URL")
-  directUrl = env("DIRECT_URL")
 }
 
 enum Role {
@@ -26,11 +24,14 @@ enum MetodoPago {
 }
 
 model User {
-  id        Int      @id @default(autoincrement())
-  email     String   @unique
-  password  String
-  role      Role
-  createdAt DateTime @default(now())
+  id                Int       @id @default(autoincrement())
+  email             String    @unique
+  password          String
+  role              Role
+  createdAt         DateTime  @default(now())
+  resetTokenHash    String?   @unique
+  resetTokenExpiry  DateTime?
+  ventas            Venta[]
 }
 
 model Producto {
@@ -38,6 +39,7 @@ model Producto {
   nombre         String
   categoria      String
   precioUnitario Float
+  costoUnitario  Float
   stock          Int
   imagenUrl      String?
   ventas         Venta[]
@@ -55,9 +57,11 @@ model Cliente {
 
 model Venta {
   id                   Int        @id @default(autoincrement())
-  orderIdOriginal      Int        @unique
-  clienteId            Int
-  cliente              Cliente    @relation(fields: [clienteId], references: [id])
+  orderIdOriginal      Int?       @unique
+  vendedorId           Int
+  vendedor             User       @relation(fields: [vendedorId], references: [id])
+  clienteId            Int?
+  cliente              Cliente?   @relation(fields: [clienteId], references: [id])
   productoId           Int
   producto             Producto   @relation(fields: [productoId], references: [id])
   cantidad             Int
@@ -65,8 +69,8 @@ model Venta {
   descuento            Float
   montoTotal           Float
   metodoPago           MetodoPago
-  fecha                DateTime
-  calificacionCliente  Float
-  diasEntrega          Int
+  fecha                DateTime   @default(now())
+  calificacionCliente  Float?
+  diasEntrega          Int?
   region               String
 }
