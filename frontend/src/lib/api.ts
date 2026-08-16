@@ -149,6 +149,7 @@ export interface VentaInput {
   descuento: number
   metodoPago: MetodoPago
   region: string
+  clienteId?: number
 }
 
 export async function createVenta(token: string, data: VentaInput) {
@@ -161,6 +162,35 @@ export async function createVenta(token: string, data: VentaInput) {
   const result = await res.json()
   if (!res.ok) throw new Error(result.error || 'Error al registrar la venta')
   return result as Venta
+}
+
+export interface Cliente {
+  id: number
+  nombre: string
+}
+
+export async function searchClientes(token: string, search: string) {
+  const query = new URLSearchParams()
+  if (search) query.set('search', search)
+
+  const res = await fetch(`${API_URL}/clientes?${query}`, {
+    headers: authHeaders(token),
+  })
+
+  if (!res.ok) throw new Error('No se pudo buscar clientes')
+  return res.json() as Promise<Cliente[]>
+}
+
+export async function createCliente(token: string, nombre: string) {
+  const res = await fetch(`${API_URL}/clientes`, {
+    method: 'POST',
+    headers: authHeaders(token),
+    body: JSON.stringify({ nombre }),
+  })
+
+  const result = await res.json()
+  if (!res.ok) throw new Error(result.error || 'Error al crear cliente')
+  return result as Cliente
 }
 
 export interface VentaFilters {

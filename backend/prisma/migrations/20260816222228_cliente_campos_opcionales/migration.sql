@@ -1,0 +1,5 @@
+-- AlterTable
+ALTER TABLE "Cliente" ALTER COLUMN "customerIdOriginal" DROP NOT NULL,
+ALTER COLUMN "edad" DROP NOT NULL,
+ALTER COLUMN "genero" DROP NOT NULL,
+ALTER COLUMN "region" DROP NOT NULL;
