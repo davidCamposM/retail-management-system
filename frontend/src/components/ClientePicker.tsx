@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react'
-import { X, UserPlus, Search } from 'lucide-react'
+import { X, Plus, Search } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
-import { searchClientes, createCliente, type Cliente } from '../lib/api'
+import { searchClientes, type Cliente } from '../lib/api'
+import ClienteFormModal from './ClienteFormModal'
 
 interface Props {
   value: Cliente | null
@@ -13,7 +14,7 @@ export default function ClientePicker({ value, onChange }: Props) {
   const [query, setQuery] = useState('')
   const [resultados, setResultados] = useState<Cliente[]>([])
   const [abierto, setAbierto] = useState(false)
-  const [creando, setCreando] = useState(false)
+  const [mostrarModal, setMostrarModal] = useState(false)
   const contenedorRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -43,22 +44,6 @@ export default function ClientePicker({ value, onChange }: Props) {
     }
   }, [token, query, abierto])
 
-  async function handleCrear() {
-    if (!token || !query.trim()) return
-    setCreando(true)
-    try {
-      const nuevo = await createCliente(token, query.trim())
-      onChange(nuevo)
-      setAbierto(false)
-      setQuery('')
-    } catch {
-      // El error se ignora silenciosamente acá — el peor caso es que la
-      // venta quede sin cliente asociado, que ya es un estado válido.
-    } finally {
-      setCreando(false)
-    }
-  }
-
   if (value) {
     return (
       <div className="flex items-center justify-between bg-forest-950 border border-forest-800 rounded-md px-3 py-2">
@@ -75,55 +60,68 @@ export default function ClientePicker({ value, onChange }: Props) {
     )
   }
 
-  const sinCoincidencias = query.trim().length > 0 && resultados.length === 0
-
   return (
-    <div className="relative" ref={contenedorRef}>
-      <div className="relative">
-        <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-sage-400" />
-        <input
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          onFocus={() => setAbierto(true)}
-          placeholder="Buscar o crear cliente (opcional)"
-          className="w-full bg-forest-950 border border-forest-800 rounded-md pl-8 pr-3 py-2 text-cream-50 placeholder-sage-400 text-sm focus:outline-none focus:border-gold-500"
-        />
-      </div>
+    <>
+      <div className="flex gap-2">
+        <div className="relative flex-1" ref={contenedorRef}>
+          <Search size={14} className="absolute left-3 top-1/2 -translate-y-1/2 text-sage-400" />
+          <input
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            onFocus={() => setAbierto(true)}
+            placeholder="Buscar cliente (opcional)"
+            className="w-full bg-forest-950 border border-forest-800 rounded-md pl-8 pr-3 py-2 text-cream-50 placeholder-sage-400 text-sm focus:outline-none focus:border-gold-500"
+          />
 
-      {abierto && (
-        <div className="absolute z-10 mt-1 w-full bg-forest-900 border border-forest-800 rounded-md shadow-xl max-h-48 overflow-y-auto">
-          {resultados.map((cliente) => (
-            <button
-              key={cliente.id}
-              type="button"
-              onClick={() => {
-                onChange(cliente)
-                setAbierto(false)
-                setQuery('')
-              }}
-              className="w-full text-left px-3 py-2 text-sm text-cream-50 hover:bg-forest-800 transition-colors"
-            >
-              {cliente.nombre}
-            </button>
-          ))}
-
-          {sinCoincidencias && (
-            <button
-              type="button"
-              onClick={handleCrear}
-              disabled={creando}
-              className="w-full flex items-center gap-2 text-left px-3 py-2 text-sm text-gold-500 hover:bg-forest-800 transition-colors disabled:opacity-50"
-            >
-              <UserPlus size={14} />
-              {creando ? 'Creando...' : `Crear cliente "${query.trim()}"`}
-            </button>
-          )}
-
-          {!sinCoincidencias && resultados.length === 0 && (
-            <p className="px-3 py-2 text-sm text-sage-400">Escribe para buscar...</p>
+          {abierto && (
+            <div className="absolute z-10 mt-1 w-full bg-forest-900 border border-forest-800 rounded-md shadow-xl max-h-48 overflow-y-auto">
+              {resultados.length > 0 ? (
+                resultados.map((cliente) => (
+                  <button
+                    key={cliente.id}
+                    type="button"
+                    onClick={() => {
+                      onChange(cliente)
+                      setAbierto(false)
+                      setQuery('')
+                    }}
+                    className="w-full text-left px-3 py-2 text-sm text-cream-50 hover:bg-forest-800 transition-colors"
+                  >
+                    {cliente.nombre}
+                  </button>
+                ))
+              ) : (
+                <p className="px-3 py-2 text-sm text-sage-400">
+                  {query.trim() ? 'Sin coincidencias.' : 'Escribe para buscar...'}
+                </p>
+              )}
+            </div>
           )}
         </div>
+
+        <button
+          type="button"
+          onClick={() => setMostrarModal(true)}
+          aria-label="Crear cliente nuevo"
+          title="Crear cliente nuevo"
+          className="w-10 h-10 shrink-0 flex items-center justify-center border border-gold-500 text-gold-500 rounded-md hover:bg-gold-500 hover:text-forest-950 transition-colors"
+        >
+          <Plus size={18} />
+        </button>
+      </div>
+
+      {mostrarModal && (
+        <ClienteFormModal
+          nombreInicial={query.trim()}
+          onCreated={(cliente) => {
+            onChange(cliente)
+            setMostrarModal(false)
+            setQuery('')
+            setAbierto(false)
+          }}
+          onCancel={() => setMostrarModal(false)}
+        />
       )}
-    </div>
+    </>
   )
 }

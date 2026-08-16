@@ -22,14 +22,19 @@ export async function listClientes(req: Request, res: Response) {
 // CREATE CLIENTE
 // ------------------------------------------------------------------------------
 export async function createCliente(req: Request, res: Response) {
-  const { nombre } = req.body;
+  const { nombre, edad, genero, region } = req.body;
 
-  if (!nombre || !nombre.trim()) {
-    return res.status(400).json({ error: "nombre es requerido" });
+  if (!nombre || !nombre.trim() || edad == null || !genero) {
+    return res.status(400).json({ error: "nombre, edad y genero son requeridos" });
   }
 
   const cliente = await prisma.cliente.create({
-    data: { nombre: nombre.trim() },
+    data: {
+      nombre: nombre.trim(),
+      edad: edad != null ? Number(edad) : undefined,
+      genero: genero || undefined,
+      region: region || undefined,
+    },
   });
 
   return res.status(201).json(cliente);
