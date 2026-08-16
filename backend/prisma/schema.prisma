@@ -47,11 +47,11 @@ model Producto {
 
 model Cliente {
   id                  Int      @id @default(autoincrement())
-  customerIdOriginal  Int      @unique
+  customerIdOriginal  Int?     @unique
   nombre              String
-  edad                Int
-  genero              String
-  region              String
+  edad                Int?
+  genero              String?
+  region              String?
   ventas              Venta[]
 }
 

@@ -16,7 +16,7 @@ import {
   type ProductoInput,
 } from '../lib/api'
 
-const CATEGORIAS = ['Todas', 'Electronics', 'Clothing', 'Beauty', 'Home']
+const CATEGORIAS = ['Todas', 'Electrónica', 'Ropa', 'Belleza', 'Hogar']
 
 export default function Productos() {
   const { token, role } = useAuth()

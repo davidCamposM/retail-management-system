@@ -125,18 +125,23 @@ export async function getDashboard(req: Request, res: Response) {
     { label: "46-55", min: 46, max: 55 },
     { label: "56+", min: 56, max: 200 },
   ];
-  const ventasConCliente = ventas.filter((v) => v.cliente !== null);
+  // Solo cuentan los clientes con edad registrada — los creados al vuelo desde
+  // el POS no la tienen, y no deberían distorsionar el corte demográfico.
+  const ventasConEdad = ventas.filter(
+    (v): v is typeof v & { cliente: NonNullable<typeof v.cliente> & { edad: number } } =>
+      v.cliente !== null && v.cliente.edad !== null
+  );
   const porRango = new Map(RANGOS.map((r) => [r.label, 0]));
-  for (const v of ventasConCliente) {
-    const edad = v.cliente!.edad;
+  for (const v of ventasConEdad) {
+    const edad = v.cliente.edad;
     const rango = RANGOS.find((r) => edad >= r.min && edad <= r.max);
     if (rango) porRango.set(rango.label, (porRango.get(rango.label) ?? 0) + 1);
   }
   const demografiaClientes = RANGOS.map((r) => ({
     rango: r.label,
     porcentaje:
-      ventasConCliente.length > 0
-        ? Math.round(((porRango.get(r.label) ?? 0) / ventasConCliente.length) * 100)
+      ventasConEdad.length > 0
+        ? Math.round(((porRango.get(r.label) ?? 0) / ventasConEdad.length) * 100)
         : 0,
   }));
 

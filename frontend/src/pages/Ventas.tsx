@@ -1,11 +1,12 @@
 import { useEffect, useState } from 'react'
 import { useAuth } from '../context/AuthContext'
-import { getProductos, createVenta, getErrorMessage, type Producto, type MetodoPago } from '../lib/api'
+import { getProductos, createVenta, getErrorMessage, type Producto, type MetodoPago, type Cliente } from '../lib/api'
 import ErrorState from '../components/ErrorState'
 import Skeleton from '../components/Skeleton'
 import Toast from '../components/Toast'
+import ClientePicker from '../components/ClientePicker'
 
-const CATEGORIAS = ['Todas', 'Electronics', 'Clothing', 'Beauty', 'Home']
+const CATEGORIAS = ['Todas', 'Electrónica', 'Ropa', 'Belleza', 'Hogar']
 const STORE_REGION = 'Metropolitana'
 
 const DESCUENTOS = [0, 0.05, 0.1]
@@ -38,6 +39,7 @@ export default function Ventas() {
   const [loadError, setLoadError] = useState<string | null>(null)
   const [reloadKey, setReloadKey] = useState(0)
   const [toast, setToast] = useState<string | null>(null)
+  const [cliente, setCliente] = useState<Cliente | null>(null)
 
   useEffect(() => {
     let cancelado = false
@@ -108,11 +110,13 @@ export default function Ventas() {
           descuento,
           metodoPago,
           region: STORE_REGION,
+          clienteId: cliente?.id,
         })
         registrados.push(item.producto.id)
       }
       setCart([])
       setDescuento(0)
+      setCliente(null)
       setToast('Venta registrada correctamente.')
       const data = await getProductos(token, {
         categoria: categoria !== 'Todas' ? categoria : undefined,
@@ -206,6 +210,11 @@ export default function Ventas() {
             {error}
           </div>
         )}
+
+        <div className="mb-4">
+          <p className="text-sage-400 text-sm mb-2">Cliente</p>
+          <ClientePicker value={cliente} onChange={setCliente} />
+        </div>
 
         {cart.length === 0 ? (
           <p className="text-sage-400 text-sm mb-4">Agrega productos del catálogo para comenzar.</p>

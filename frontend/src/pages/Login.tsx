@@ -1,8 +1,14 @@
 import { useState, type FormEvent } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
+import { LogIn } from 'lucide-react'
 import { useAuth } from '../context/AuthContext'
 import { loginRequest, getErrorMessage } from '../lib/api'
 import { DEFAULT_ROUTE_BY_ROLE } from '../lib/permissions'
+
+const CUENTAS_DEMO = [
+  { label: 'Admin', email: 'demo.admin@retailops.com', password: 'Demo2026!' },
+  { label: 'Vendedor', email: 'vendedor@retailops.com', password: 'vendedor123' },
+]
 
 export default function Login() {
   const [email, setEmail] = useState('')
@@ -13,6 +19,12 @@ export default function Login() {
 
   const { login } = useAuth()
   const navigate = useNavigate()
+
+  function usarCuentaDemo(cuenta: typeof CUENTAS_DEMO[number]) {
+    setEmail(cuenta.email)
+    setPassword(cuenta.password)
+    setError(null)
+  }
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault()
@@ -41,7 +53,7 @@ export default function Login() {
             <span className="font-serif text-gold-500 text-xl">R</span>
           </div>
           <h1 className="font-serif text-3xl text-cream-50">RetailOps</h1>
-          <p className="text-sage-400 mt-2">Gestión de ventas para pymes retail</p>
+          <p className="text-sage-400 mt-2">Gestión de Ventas - Pymes Retail</p>
         </div>
 
         <div className="border-t border-forest-800 mb-8" />
@@ -104,6 +116,31 @@ export default function Login() {
             {loading ? 'Ingresando...' : 'Iniciar sesión'}
           </button>
         </form>
+
+        <div className="border-t border-forest-800 mt-8 pt-6">
+          <p className="text-sage-400 text-xs uppercase tracking-wide text-center">
+            Cuentas de demostración
+          </p>
+          <p className="text-sage-400/70 text-xs text-center mb-3">
+            Toca una para completar el formulario
+          </p>
+          <div className="grid grid-cols-2 gap-3">
+            {CUENTAS_DEMO.map((cuenta) => (
+              <button
+                key={cuenta.email}
+                type="button"
+                onClick={() => usarCuentaDemo(cuenta)}
+                className="text-left bg-forest-950 border border-gold-500/40 rounded-md px-3 py-2.5 shadow-sm hover:border-gold-500 hover:bg-gold-500/10 hover:shadow-md active:scale-[0.98] transition-all cursor-pointer"
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <p className="text-gold-500 text-sm font-medium">{cuenta.label}</p>
+                  <LogIn size={14} className="text-gold-500 shrink-0" />
+                </div>
+                <p className="text-sage-400 text-xs truncate mt-0.5">{cuenta.email}</p>
+              </button>
+            ))}
+          </div>
+        </div>
       </div>
     </div>
   )

@@ -76,6 +76,22 @@ PRODUCT_NAME_TEMPLATES = {
 }
 
 
+# El dataset de Kaggle trae las categorías en inglés. RetailOps las usa en
+# español en toda la UI, así que se traducen acá, en el único punto donde
+# se generan los CSVs — así el resto del pipeline (seed, backend, frontend)
+# nunca tiene que lidiar con inglés.
+CATEGORY_TRANSLATIONS = {
+    "electronics": "Electrónica",
+    "clothing": "Ropa",
+    "beauty": "Belleza",
+    "home": "Hogar",
+}
+
+
+def translate_category(category: str) -> str:
+    return CATEGORY_TRANSLATIONS.get(category.strip().lower(), category)
+
+
 def generic_product_name(category: str, index: int) -> str:
     return f"{category.title()} - Modelo {index}"
 
@@ -116,7 +132,7 @@ def build_products(df: pd.DataFrame) -> pd.DataFrame:
             rows.append({
                 "id": product_id,
                 "nombre": name,
-                "categoria": category,
+                "categoria": translate_category(category),
                 "precio_unitario": round(random.uniform(min_price, max_price), 2),
                 "stock": random.randint(10, 200),
                 "imagen_url": f"https://picsum.photos/seed/producto{product_id}/400/400",
@@ -150,7 +166,7 @@ def build_sales(df: pd.DataFrame, productos: pd.DataFrame, clientes: pd.DataFram
 
     rows = []
     for i, r in df.iterrows():
-        category_products = products_by_category.get(r["product_category"], [])
+        category_products = products_by_category.get(translate_category(r["product_category"]), [])
         producto_id = random.choice(category_products) if category_products else None
         rows.append({
             "id": i + 1,
