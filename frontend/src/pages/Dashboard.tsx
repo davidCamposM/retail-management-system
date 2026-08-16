@@ -25,6 +25,7 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [reloadKey, setReloadKey] = useState(0)
+  const [barraActiva, setBarraActiva] = useState<string | null>(null)
 
   useEffect(() => {
     let cancelado = false
@@ -144,20 +145,37 @@ export default function Dashboard() {
       <div className="bg-forest-900 border border-forest-800 rounded-md p-6 mb-6">
         <h2 className="font-serif text-lg text-cream-50 mb-6">Ventas por mes</h2>
         <div className="flex items-end justify-between gap-4 h-48">
-          {data.ventasPorMes.map((v) => (
-            <div key={v.mes} className="flex-1 flex flex-col items-center gap-2 group relative">
-              <div className="relative w-full flex justify-center" style={{ height: '160px' }}>
-                <div
-                  className="absolute bottom-0 w-6 max-w-full rounded-t bg-gold-500 group-hover:bg-gold-400 transition-colors"
-                  style={{ height: `${(v.valor / maxVenta) * 100}%` }}
-                />
-                <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-forest-950 border border-forest-800 text-cream-50 text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
-                  {formatCurrency(v.valor)}
+          {data.ventasPorMes.map((v) => {
+            const activa = barraActiva === v.mes
+            return (
+              <button
+                key={v.mes}
+                type="button"
+                onMouseEnter={() => setBarraActiva(v.mes)}
+                onMouseLeave={() => setBarraActiva(null)}
+                onClick={() => setBarraActiva(activa ? null : v.mes)}
+                aria-label={`Ventas de ${v.mes}: ${formatCurrency(v.valor)}`}
+                className="flex-1 flex flex-col items-center gap-2 relative bg-transparent border-0 cursor-pointer"
+              >
+                <div className="relative w-full flex justify-center" style={{ height: '160px' }}>
+                  <div
+                    className={`absolute bottom-0 w-6 max-w-full rounded-t transition-colors ${
+                      activa ? 'bg-gold-400' : 'bg-gold-500'
+                    }`}
+                    style={{ height: `${(v.valor / maxVenta) * 100}%` }}
+                  />
+                  <div
+                    className={`absolute -top-8 left-1/2 -translate-x-1/2 bg-forest-950 border border-forest-800 text-cream-50 text-xs px-2 py-1 rounded whitespace-nowrap pointer-events-none transition-opacity ${
+                      activa ? 'opacity-100' : 'opacity-0'
+                    }`}
+                  >
+                    {formatCurrency(v.valor)}
+                  </div>
                 </div>
-              </div>
-              <span className="text-sage-400 text-sm">{v.mes}</span>
-            </div>
-          ))}
+                <span className="text-sage-400 text-sm">{v.mes}</span>
+              </button>
+            )
+          })}
         </div>
       </div>
 
