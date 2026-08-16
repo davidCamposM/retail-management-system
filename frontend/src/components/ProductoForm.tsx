@@ -56,7 +56,7 @@ export default function ProductoForm({ initial, onSubmit, onCancel }: Props) {
           value={categoria}
           onChange={(e) => setCategoria(e.target.value)}
           required
-          placeholder="Electronics, Clothing, Beauty, Home"
+          placeholder="Electrónica, Ropa, Belleza, Hogar"
           className="w-full bg-forest-950 border border-forest-800 rounded-md px-3 py-2 text-cream-50 focus:outline-none focus:border-gold-500"
         />
       </div>

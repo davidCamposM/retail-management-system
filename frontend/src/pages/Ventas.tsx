@@ -5,7 +5,7 @@ import ErrorState from '../components/ErrorState'
 import Skeleton from '../components/Skeleton'
 import Toast from '../components/Toast'
 
-const CATEGORIAS = ['Todas', 'Electronics', 'Clothing', 'Beauty', 'Home']
+const CATEGORIAS = ['Todas', 'Electrónica', 'Ropa', 'Belleza', 'Hogar']
 const STORE_REGION = 'Metropolitana'
 
 const DESCUENTOS = [0, 0.05, 0.1]
