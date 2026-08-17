@@ -1,4 +1,4 @@
-const API_URL = 'http://localhost:4000'
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000'
 
 export function getErrorMessage(err: unknown, fallback: string): string {
   if (err instanceof TypeError && err.message === 'Failed to fetch') {
@@ -181,11 +181,18 @@ export async function searchClientes(token: string, search: string) {
   return res.json() as Promise<Cliente[]>
 }
 
-export async function createCliente(token: string, nombre: string) {
+export interface ClienteInput {
+  nombre: string
+  edad: number
+  genero: string
+  region?: string
+}
+
+export async function createCliente(token: string, data: ClienteInput) {
   const res = await fetch(`${API_URL}/clientes`, {
     method: 'POST',
     headers: authHeaders(token),
-    body: JSON.stringify({ nombre }),
+    body: JSON.stringify(data),
   })
 
   const result = await res.json()
