@@ -12,6 +12,7 @@ build
 node_modules
 dist
 dist-ssr
+lib
 *.local
 
 # Environment variables / secrets
