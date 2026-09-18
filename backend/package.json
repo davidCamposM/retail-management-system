@@ -11,6 +11,8 @@
     "lint": "tslint -c tslint.json src/**/*.ts",
     "dev": "tsx watch src/index.ts",
     "start": "tsx src/index.ts",
+    "migrate:prod": "set -a && . ./.env.production && set +a && prisma migrate deploy",
+    "seed:prod": "set -a && . ./.env.production && set +a && prisma db seed",
     "postinstall": "prisma generate",
     "prestart": "prisma migrate deploy"
   },

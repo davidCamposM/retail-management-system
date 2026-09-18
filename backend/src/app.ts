@@ -40,7 +40,6 @@ app.use("/clientes", clienteRoutes);
 
 /**
  * Se exporta la app ya construida, sin encenderla. Quien la enciende depende
- * del entorno: en local lo hace index.ts con app.listen(), y en Vercel la
- * invoca la serverless function definida en api/index.ts.
+ * del entorno.
  */
 export default app;
